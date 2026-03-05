@@ -1,766 +1,204 @@
-Python 3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)] on win32
-Enter "help" below or click "Help" above for more information.
-
-========== RESTART: D:\1PROJECT TRANSLATION\tools\New Python Script.py =========
-=== IL2CPP GAME MODDING ANALYZER ===
-Base dir : D:\1PROJECT TRANSLATION\tools\Il2CppDumper-win-v6.7.46
-dump.cs  : True
-str.json : True
 
 ============================================================
-ANALISIS: stringliteral.json
+ CLASS: EncryptionUtility (16 lines)
 ============================================================
-Total string literals: 17448
+public class EncryptionUtility // TypeDefIndex: 2325
+{
+	// Fields
+	private const int Iterations = 1000;
 
---- CRYPTO/ENKRIPSI ---
+	// Methods
 
-[DECRYPT] 5 match:
-  addr=0x333E870  val='Bad length during Decryption: the length parameter must be smaller than or equal to the size of the destination array.'
-  addr=0x33655B8  val='Could not decrypt file. Please ensure that you are using the same password used to encrypt the file.'
-  addr=0x336DBD0  val='Length of the data to decrypt is invalid.'
-  addr=0x33763D8  val="Dialogue System Menus: Can't decrypt data: + "
-  addr=0x3388AD8  val='This stream does not Decrypt via Write()'
+	// RVA: 0x473750 Offset: 0x472950 VA: 0x180473750
+	public static string Encrypt(string plainText, string password) { }
 
-[ENCRYPT] 21 match:
-  addr=0x333E910  val='Bad length during Encryption: The length parameter must be smaller than or equal to the size of the destination array.'
-  addr=0x3346130  val='        Encrypted?: {0}\n'
-  addr=0x3346D48  val='You may not set Encryption to that value.'
-  addr=0x3350DF0  val='Cannot extract: Entry {0} is encrypted with an algorithm not supported by DotNetZip: {1}'
-  addr=0x3350E98  val='Cannot extract: Entry {0} uses an unsupported encryption algorithm ({1:X2})'
-  addr=0x3352778  val='Cannot load from file because the data in it is not JSON data, or the data is encrypted.\nIf the save data is encrypted, please ensure that encryption is enabled when you load, and that you are using the same password used to encrypt the data.'
-  addr=0x33556E8  val='Invalid EncryptedData'
-  addr=0x33590A0  val='invalid EncryptedData'
-  addr=0x3359148  val='invalid EncryptedPrivateKeyInfo'
-  addr=0x3359BC8  val='invalid encryptionAlgorithm'
+	// RVA: 0x473B80 Offset: 0x472D80 VA: 0x180473B80
+	public static bool TryDecrypt(string cipherText, string password, out string plainText) { }
 
-[AES] 13 match:
-  addr=0x333E8D8  val='RSAES_OAEP'
-  addr=0x3369F88  val='System.Security.Cryptography.AesCryptoServiceProvider, System.Core'
-  addr=0x3381D28  val='aes'
-  addr=0x3381DC8  val='aes128'
-  addr=0x3381E68  val='aes128wrap'
-  addr=0x3381F08  val='aes192'
-  addr=0x3381FA8  val='aes192wrap'
-  addr=0x3382048  val='aes256'
-  addr=0x33820E8  val='aes256wrap'
-  addr=0x3398228  val='AES'
-
-[XOR] 1 match:
-  addr=0x33499A8  val='xor'
-
-[RC4] 2 match:
-  addr=0x333DFE0  val='RC4'
-  addr=0x33821C0  val='rc4'
-
-[RC2] 5 match:
-  addr=0x333DF40  val='RC2'
-  addr=0x3348580  val='CMSRC2wrap'
-  addr=0x3382120  val='rc2'
-  addr=0x339A8F0  val='system.security.cryptography.rc2'
-  addr=0x339A990  val='system.security.cryptography.rc2cryptoserviceprovider'
-
-[DES] 245 match:
-  addr=0x333E870  val='Bad length during Decryption: the length parameter must be smaller than or equal to the size of the destination array.'
-  addr=0x333E910  val='Bad length during Encryption: The length parameter must be smaller than or equal to the size of the destination array.'
-  addr=0x333EA28  val='useMaxVisibleDescender'
-  addr=0x33415F8  val='Bengali (Bangladesh)'
-  addr=0x3341AC8  val='Hash based container has yet to be created or has been destroyed!'
-  addr=0x3341BE0  val="Binary stream '{0}' does not contain a valid BinaryHeader. Possible causes are invalid stream or object version change between serialization and deserialization."
-  addr=0x3341CC0  val='HashCode is a mutable struct and should not be compared with other HashCodes.'
-  addr=0x3341D68  val='HashCode is a mutable struct and should not be compared with other HashCodes. Use ToHashCode to retrieve the computed hash code.'
-  addr=0x3341F90  val='\n\nCommand description:\n'
-  addr=0x33420E0  val='\n\nParameter descriptions:'
-
-[CIPHER] 10 match:
-  addr=0x3357540  val='SetCiphers'
-  addr=0x3360C20  val='Specified cipher mode is not valid for this algorithm.'
-  addr=0x3367810  val='Key Encipherment'
-  addr=0x336F858  val='Data Encipherment'
-  addr=0x3372918  val='Decipher Only'
-  addr=0x3384658  val='Encipher Only'
-  addr=0x3392440  val='cipherText'
-  addr=0x33978C8  val='Failed to set list of supported ciphers'
-  addr=0x33A10F0  val='Unkown CipherMode'
-  addr=0x33A5798  val='GetCipher'
-
-[RIJNDAEL] 3 match:
-  addr=0x33872F0  val='rijndael'
-  addr=0x339AA38  val='system.security.cryptography.rijndael'
-  addr=0x339AAD8  val='system.security.cryptography.rijndaelmanaged'
-
-[DECIPHER] 1 match:
-  addr=0x3372918  val='Decipher Only'
-
-[CRYPT] 100 match:
-  addr=0x333E870  val='Bad length during Decryption: the length parameter must be smaller than or equal to the size of the destination array.'
-  addr=0x333E910  val='Bad length during Encryption: The length parameter must be smaller than or equal to the size of the destination array.'
-  addr=0x3346130  val='        Encrypted?: {0}\n'
-  addr=0x3346D48  val='You may not set Encryption to that value.'
-  addr=0x3350DF0  val='Cannot extract: Entry {0} is encrypted with an algorithm not supported by DotNetZip: {1}'
-  addr=0x3350E98  val='Cannot extract: Entry {0} uses an unsupported encryption algorithm ({1:X2})'
-  addr=0x3352778  val='Cannot load from file because the data in it is not JSON data, or the data is encrypted.\nIf the save data is encrypted, please ensure that encryption is enabled when you load, and that you are using the same password used to encrypt the data.'
-  addr=0x33556E8  val='Invalid EncryptedData'
-  addr=0x33590A0  val='invalid EncryptedData'
-  addr=0x3359148  val='invalid EncryptedPrivateKeyInfo'
-
-[HASH] 44 match:
-  addr=0x3341AC8  val='Hash based container has yet to be created or has been destroyed!'
-  addr=0x3341B70  val='Hash key cannot be changed after the first write to the stream.'
-  addr=0x3341C18  val='Hash must be finalized before the hash value is retrieved.'
-  addr=0x3341CC0  val='HashCode is a mutable struct and should not be compared with other HashCodes.'
-  addr=0x3341D68  val='HashCode is a mutable struct and should not be compared with other HashCodes. Use ToHashCode to retrieve the computed hash code.'
-  addr=0x3341E10  val='HashCodeProvider'
-  addr=0x3341EB8  val='HashMap is full'
-  addr=0x3341F60  val='HashName'
-  addr=0x3342008  val='HashProvider'
-  addr=0x33420B0  val='HashSet capacity is too big.'
-
-[HMAC] 19 match:
-  addr=0x333CC20  val='unsupported HMAC'
-  addr=0x334DB00  val='hmacmd5'
-  addr=0x334DBA8  val='hmacripemd160'
-  addr=0x334DC50  val='hmacsha1'
-  addr=0x334DCF8  val='hmacsha256'
-  addr=0x334DDA0  val='hmacsha384'
-  addr=0x334DE48  val='hmacsha512'
-  addr=0x33514C0  val='http://www.w3.org/2000/09/xmldsig#hmac-sha1'
-  addr=0x3351808  val='http://www.w3.org/2001/04/xmldsig-more#hmac-ripemd160'
-  addr=0x33518B0  val='http://www.w3.org/2001/04/xmldsig-more#hmac-sha256'
-
-[KEY] 218 match:
-  addr=0x333EA20  val='RSA_KEYX'
-  addr=0x333FB48  val='HKEY_CLASSES_ROOT'
-  addr=0x333FBF0  val='HKEY_CURRENT_CONFIG'
-  addr=0x333FC98  val='HKEY_CURRENT_USER'
-  addr=0x333FD40  val='HKEY_DYN_DATA'
-  addr=0x333FDE8  val='HKEY_LOCAL_MACHINE'
-  addr=0x333FE90  val='HKEY_PERFORMANCE_DATA'
-  addr=0x333FF38  val='HKEY_USERS'
-  addr=0x3341978  val='HasKey'
-  addr=0x3341B70  val='Hash key cannot be changed after the first write to the stream.'
-
-[IV] 482 match:
-  addr=0x333CB10  val='Version value must be positive.'
-  addr=0x333CCB8  val='Quechua (Bolivia)'
-  addr=0x333D688  val="Very high penalty applied. Are you sure negative values haven't underflowed?\nPenalty values this high could with long paths cause overflows and in some cases infinity loops because of that.\nPenalty value applied: "
-  addr=0x333D7D0  val='Very large number of subdivisions. Cowardly refusing to subdivide every segment into more than '
-  addr=0x333DB30  val='Guid Conflict when importing graphs additively. Imported graph will get a new Guid.\nThis message is (relatively) harmless.'
-  addr=0x333DE00  val='url attribute is required in client element when it contains activated entries'
-  addr=0x333E6C0  val='exclusive'
-  addr=0x333E728  val='Bad indices/count arguments (nativeBufferStartIndex:{0} graphicsBufferStartIndex:{1} count:{2})'
-  addr=0x333EBA8  val='VisualElements cannot be added to an active visual tree during generateVisualContent callback execution nor during visual tree rendering'
-  addr=0x333EC50  val='VisualElements cannot be marked for dirty repaint under an active visual tree during generateVisualContent callback execution nor during visual tree rendering'
-
-[SALT] 6 match:
-  addr=0x334F618  val='Salt'
-  addr=0x334F6C0  val='Salt is not at least eight bytes.'
-  addr=0x335A450  val='invalid salt'
-  addr=0x336E0D8  val='missing MAC salt'
-  addr=0x3388DC8  val='salt'
-  addr=0x33A49F0  val='UseSalt=true is not implemented on Mono yet'
-
-[ENCODE] 10 match:
-  addr=0x333F168  val='Badly encoded extension.'
-  addr=0x3345848  val='XmlText cannot be used to encode complex types'
-  addr=0x337D900  val="The output byte buffer is too small to contain the encoded data, encoding '{0}' fallback '{1}'."
-  addr=0x3382A78  val="Must complete Convert() operation or call Encoder.Reset() before calling GetBytes() or GetByteCount(). Encoder '{0}' fallback '{1}'."
-  addr=0x33847A0  val='application/x-www-form-urlencoded'
-  addr=0x3386460  val='asnEncodedData'
-  addr=0x338B978  val='Too many bytes in what should have been a 7 bit encoded Int32.'
-  addr=0x33A7CC0  val='encodedData'
-  addr=0x33A7D68  val='encodedDistinguishedName'
-  addr=0x33A7E10  val='encoderFallback'
-
-[DECODE] 7 match:
-  addr=0x333D2A8  val='BLIT_DECODE_HDR'
-  addr=0x3350760  val="Cannot decode public key from unknown OID '{0}'."
-  addr=0x33552F8  val='Invalid Bootstring decode result, at {0}'
-  addr=0x33558B0  val='_BlitDecodeInstructions'
-  addr=0x337D998  val="The output char buffer is too small to contain the decoded characters, encoding '{0}' fallback '{1}'."
-  addr=0x3399738  val='Unable to decode certificate.'
-  addr=0x339E828  val='decoderFallback'
-
---- FILE LOADING ---
-
-[ENPC] 1 match:
-  addr=0x337F4E8  val='/enpc'
-
-[EITEM] 4 match:
-  addr=0x3347480  val='You must specify bindItem if makeItem is specified.'
-  addr=0x3347528  val='You must specify makeItem if bindItem is specified.'
-  addr=0x337F448  val='/eitem'
-  addr=0x3383CA0  val='removeitem'
-
-[EPLAYER] 1 match:
-  addr=0x337F588  val='/eplayer'
-
-[ESOUND] 2 match:
-  addr=0x337F628  val='/esound'
-  addr=0x33A1B90  val='PewAudienceSound'
-
-[EAUTH] 2 match:
-  addr=0x337E8E0  val='preauthenticate'
-  addr=0x337F558  val='MobileAuthenticatedStream'
-
-[STREAMINGASSETS] 2 match:
-  addr=0x337F128  val='/Polyart/PolyartStudio/SharedResources/CritiasFoliage/StreamingAssets/'
-  addr=0x337F268  val='/StreamingAssets/'
-
-[READALLBYTES] 1 match:
-  addr=0x336C760  val="'ReadAllBytes' is not supported for the current platform!"
-
-[BINARYREADER] 2 match:
-  addr=0x3341DD8  val='BinaryReader encountered an invalid string length of {0} characters.'
-  addr=0x337C8E0  val="The number of bytes requested does not fit into BinaryReader's internal buffer."
-
---- GAME DATA/TEXT ---
-
-[NPC] 8 match:
-  addr=0x335B2F0  val='{0}: UnityDialogueUI NPC Subtitle Line needs to be assigned.'
-  addr=0x335B638  val='{0}: UnityUIDialogueUI NPC Subtitle Line needs to be assigned.'
-  addr=0x3360590  val='Spawning NPCs...'
-  addr=0x3374CF8  val='npc'
-  addr=0x3376CD0  val='MapIcon_NpcSpawner_'
-
-[DIALOG] 148 match:
-  addr=0x3351C20  val='Scene OnExecute() event failed on dialogue entry '
-  addr=0x3351EC0  val="{0}: Bark (speaker={1}, listener={2}): '{3}' can't find a valid dialogue entry"
-  addr=0x3352940  val="{0}: Conversation '{1}' doesn't have a START dialogue entry."
-  addr=0x3352E78  val="{0}: Dialogue entry '{1}' Video File field is assigned but Sequence is blank. Cutscenes now use Sequence field."
-  addr=0x3353A48  val="{0}: Loading default Dialogue UI '{1}'."
-
-[QUEST] 138 match:
-  addr=0x333CEA8  val='Quest'
-  addr=0x333CF48  val='Quest Log'
-  addr=0x333CFF0  val='QuestIDToName'
-  addr=0x333D088  val='QuestProgress_'
-  addr=0x333D128  val='QuestStateDispatcher'
-
-[ITEM] 151 match:
-  addr=0x333EFF0  val='useSpriteMesh'
-  addr=0x33402F0  val='BaseTreeViewController.ExpandItemByIndex'
-  addr=0x3340590  val='BaseVerticalCollectionView.RefreshItems'
-  addr=0x3340EF8  val='HandItemAwake'
-  addr=0x3340FA0  val='HandItemAwake.None'
-
-[PLAYER] 37 match:
-  addr=0x33448B8  val="Hide Floor Script: No Player object found. Make sure your player prefab is tagged as 'Player'"
-  addr=0x334F650  val="Cannot convert saved player pref '"
-  addr=0x334F6F8  val="Cannot convert saved player pref '{0}' to expected type ({1}).\nReverting to initial value."
-  addr=0x3350C68  val='Save System: Retrieved from PlayerPrefs key '
-  addr=0x3350D10  val='Save System: Storing in PlayerPrefs key '
-
-[SAVE] 125 match:
-  addr=0x33404F0  val='Warning, no grass file data exists! Save the grass!'
-  addr=0x33422D8  val="\n<i>To disable these error messages from Easy Save, go to Window > Easy Save 3 > Settings, and uncheck 'Log Errors'</i>"
-  addr=0x3342380  val="\n<i>To disable these messages from Easy Save, go to Window > Easy Save 3 > Settings, and uncheck 'Log Info'</i>"
-  addr=0x3342428  val="\n<i>To disable warnings from Easy Save, go to Window > Easy Save 3 > Settings, and uncheck 'Log Warnings'</i>"
-  addr=0x33430A0  val='\nThis is usually fine as the stored data is usually backwards and forwards compatible.\nHowever node data (not settings) can get corrupted between versions (even though I try my best to keep compatibility), so it is recommended to recalculate any caches (those for faster startup) and resave any files. Even if it seems to load fine, it might cause subtle bugs.\n'
-
-[LOAD] 158 match:
-  addr=0x333E918  val='VisualElement.elementPanel is null! Cannot load persistent data.'
-  addr=0x333E9C0  val='VisualElement.elementPanel is null! Cannot load view data.'
-  addr=0x333EE30  val='Bad {0} LoadAction provided.'
-  addr=0x3342200  val='Hashtable insert failed. Load factor too high. The most common cause is multiple threads writing to the Hashtable simultaneously.'
-  addr=0x33422A8  val="Hashtable's capacity overflowed and went negative. Check load factor, capacity and the current size of the table."
-
-[DATABASE] 13 match:
-  addr=0x33529E8  val="{0}: Conversation '{1}' not found in database."
-  addr=0x3353700  val='{0}: InitializeNewActorFieldsFromDatabase() failed to get actor data: {1}'
-  addr=0x33537A8  val='{0}: InitializeNewQuestEntriesFromDatabase() failed to get quest data: {1}'
-  addr=0x3353850  val='{0}: InitializeNewVariablesFromDatabase() failed to get variable data: {1}'
-  addr=0x33539A0  val="{0}: Loaded master database '{1}'"
-
-[GAMEDATA] 8 match:
-  addr=0x3350530  val="Save System: DiskSavedGameDataStorer - Can't create file: "
-  addr=0x33505D8  val='Save System: DiskSavedGameDataStorer - Error reading file: '
-  addr=0x3350680  val='Save System: DiskSavedGameDataStorer - Loading '
-  addr=0x3350728  val='Save System: DiskSavedGameDataStorer - Saving '
-  addr=0x33507D0  val='Save System: DiskSavedGameDataStorer loading '
-
-[JSONDATA] 1 match:
-  addr=0x337C478  val='. Adding JsonDataSerializer.'
-
-[LOCALIZE] 6 match:
-  addr=0x335BF58  val=' or a UI Localized Manager component.'
-  addr=0x3371A50  val="Localize UI didn't find a localizable UI component on "
-  addr=0x3389680  val='No localized text table is assigned to '
-  addr=0x33A3D20  val='Use LocalizeUI instead.'
-  addr=0x33A40F8  val='Use UILocalizationManager and LocalizeUI instead.'
-
-[LANGUAGE] 13 match:
-  addr=0x335DF50  val='Invariant Language (Invariant Country)'
-  addr=0x335DFC0  val='Common Language Runtime detected an invalid program.'
-  addr=0x335FDA8  val='") failed: Language doesn\'t exist. Use Text Table Editor or AddLanguage() to add the language first.'
-  addr=0x3360670  val='Content-Language'
-  addr=0x3361718  val='language'
-
-[TRANSLATE] 5 match:
-  addr=0x3358030  val="Invalid animation property id. Can't apply value of type 'Translate' to property '"
-  addr=0x338DC50  val='Translate'
-  addr=0x339A550  val='Unable to translate Unicode character \\\\u{0:X4} at index {1} to specified code page.'
-  addr=0x339A5F0  val='Unable to translate bytes {0} at index {1} from specified code page to Unicode.'
-  addr=0x33A1530  val='translate'
-
-[TEXT] 429 match:
-  addr=0x333EC10  val='RTHandle.Initialize should only be called once before allocating any Render Texture. This may be caused by an unreleased RTHandle resource.\n{0}\n'
-  addr=0x333F2B0  val='BakeSDF.ClearTexturesAndBuffers'
-  addr=0x3340670  val='HP_TEXTURE_OBJECTSPACE'
-  addr=0x3340718  val='HP_TEXTURE_SCREENSPACE'
-  addr=0x33407C0  val='HP_TEXTURE_TRIPLANAR'
-
-[STRING] 185 match:
-  addr=0x333CA68  val='Version string portion was too short or too long.'
-  addr=0x333DCB8  val='uriString'
-  addr=0x333DD20  val='Guid string should only contain hexadecimal characters.'
-  addr=0x33404B0  val='Reached end of stream while trying to read string literal.'
-  addr=0x3340A98  val='ReadElementString'
-
-[MESSAGE] 48 match:
-  addr=0x333DB30  val='Guid Conflict when importing graphs additively. Imported graph will get a new Guid.\nThis message is (relatively) harmless.'
-  addr=0x333F7D8  val='WaitForMessage(Forever)'
-  addr=0x333F878  val='WaitForMessage(Forever); '
-  addr=0x33422D8  val="\n<i>To disable these error messages from Easy Save, go to Window > Easy Save 3 > Settings, and uncheck 'Log Errors'</i>"
-  addr=0x3342380  val="\n<i>To disable these messages from Easy Save, go to Window > Easy Save 3 > Settings, and uncheck 'Log Info'</i>"
-
-[CONVERSATION] 77 match:
-  addr=0x3351B80  val="{0}: Another conversation is already active. Not starting '{1}'."
-  addr=0x3352358  val='{0}: Bark (speaker={1}, listener={2}): conversation title is blank'
-  addr=0x3352400  val='{0}: Bark triggered on {1}, but a conversation is already active.'
-  addr=0x33524A8  val='{0}: Bark triggered on {1}, but conversation name is blank.'
-  addr=0x3352940  val="{0}: Conversation '{1}' doesn't have a START dialogue entry."
-
-[TALK] 5 match:
-  addr=0x335E490  val='InvokeEventsOnEndTalk'
-  addr=0x336DF28  val='Talk'
-  addr=0x3373958  val='DefaultVillagerTalk_1'
-  addr=0x33739F8  val='DefaultVillagerTalk_2'
-  addr=0x3373A98  val='DefaultVillagerTalk_3'
-
-[SPEAK] 17 match:
-  addr=0x3351CD0  val="{0}: Bark (speaker={1}, listener={2}): '{3}'"
-  addr=0x3351D70  val="{0}: Bark (speaker={1}, listener={2}): '{3}' bark UI is null or disabled"
-  addr=0x3351E18  val="{0}: Bark (speaker={1}, listener={2}): '{3}' bark entry is null"
-  addr=0x3351EC0  val="{0}: Bark (speaker={1}, listener={2}): '{3}' can't find a valid dialogue entry"
-  addr=0x3351F68  val="{0}: Bark (speaker={1}, listener={2}): '{3}' currently barking a higher priority bark"
-
-[SAVED] Hasil lengkap: D:\1PROJECT TRANSLATION\tools\Il2CppDumper-win-v6.7.46\stringliteral_results.txt
+	// RVA: 0x435870 Offset: 0x434A70 VA: 0x180435870
+	public void .ctor() { }
+}
 
 ============================================================
-ANALISIS: dump.cs
+ CLASS: EncryptionAlgorithm (22 lines)
 ============================================================
-Membaca dump.cs (bisa lambat, file 26MB)...
+public abstract class EncryptionAlgorithm // TypeDefIndex: 3425
+{
+	// Methods
 
---- CRYPTO/ENKRIPSI (dump.cs) ---
+	// RVA: -1 Offset: -1 Slot: 4
+	public abstract byte[] Encrypt(byte[] bytes, string password, int bufferSize);
 
-[DECRYPT] 35 match:
-  line 2640 [RSAManaged]: protected virtual byte[] FinalDecrypt(byte[] inputBuffer, int inputOffset, int inputCount) { }
-  line 64792 [Normalization]: private void Decrypt() { }
-  line 66037 [CryptographicUnexpectedOperationException]: public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV) { }
-  line 66579 [PasswordDeriveBytes]: public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV) { }
-  line 66621 [PasswordDeriveBytes]: public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV) { }
-  line 66640 [PasswordDeriveBytes]: public const RijndaelManagedTransformMode Decrypt = 1;
-  line 66656 [PasswordDeriveBytes]: private int[] m_decryptKeyExpansion; // 0x38
-  line 66661 [PasswordDeriveBytes]: private int[] m_decryptindex; // 0x58
+	// RVA: -1 Offset: -1 Slot: 5
+	public abstract byte[] Decrypt(byte[] bytes, string password, int bufferSize);
 
-[ENCRYPT] 124 match:
-  line 2528 [RSAManaged]: public override byte[] EncryptValue(byte[] rgb) { }
-  line 2559 [RSAManaged]: protected bool encrypt; // 0x18
-  line 2580 [RSAManaged]: public void .ctor(SymmetricAlgorithm symmAlgo, bool encryption, byte[] rgbIV) { }
-  line 2637 [RSAManaged]: protected virtual byte[] FinalEncrypt(byte[] inputBuffer, int inputOffset, int inputCount) { }
-  line 64762 [Normalization]: [MonoTODO("work in progress - encryption is missing")]
-  line 64789 [Normalization]: private void Encrypt() { }
-  line 66034 [CryptographicUnexpectedOperationException]: public override ICryptoTransform CreateEncryptor(byte[] rgbKey, byte[] rgbIV) { }
-  line 66341 [MACTripleDES]: private ICryptoTransform m_encryptor; // 0x30
+	// RVA: -1 Offset: -1 Slot: 6
+	public abstract void Encrypt(Stream input, Stream output, string password, int bufferSize);
 
-[AES] 126 match:
-  line 65716 [CryptoStream]: public abstract class Aes : SymmetricAlgorithm // TypeDefIndex: 765
-  line 65728 [CryptoStream]: public static Aes Create() { }
-  line 65731 [CryptoStream]: public static Aes Create(string algorithmName) { }
-  line 180805 [ES3AutoSaveMgr]: public const ES3.EncryptionType AES = 1;
-  line 243715 [AESEncryptionAlgorithm]: public class AESEncryptionAlgorithm : EncryptionAlgorithm // TypeDefIndex: 3426
-  line 263577 [SeekableAesStream]: public class SeekableAesStream : Stream // TypeDefIndex: 3877
-  line 263581 [SeekableAesStream]: private readonly AesManaged aes; // 0x30
-  line 628431 [TexturePacker_JsonArray]: public sealed class AesManaged : Aes // TypeDefIndex: 10870
+	// RVA: -1 Offset: -1 Slot: 7
+	public abstract void Decrypt(Stream input, Stream output, string password, int bufferSize);
 
-[XOR] 20 match:
-  line 269750 [HighlightEffect]: private bool ComputeSmoothQuadMatrixOriginShifted(Camera cam, ref Bounds bounds, ref Vector3 shift) { }
-  line 322484 [VisualElement]: internal bool isWorldBoundingBoxOrDependenciesDirty { get; }
-  line 322887 [VisualElement]: internal bool get_isWorldBoundingBoxOrDependenciesDirty() { }
-  line 371556 [PolyNode]: public const ClipType ctXor = 3;
-  line 372323 [ClipperOffset]: private void FixOrientations() { }
-  line 373553 [PixelPerfectCameraInternal]: internal bool cropFrameXOrY; // 0x26
-  line 447973 [Material]: private static bool IsVertexIndexOrCopyOnly(GraphicsBuffer.Target target) { }
-  line 463401 [ExcludeFromDocsAttribute]: public const BlendOp LogicalXor = 15;
+	// RVA: 0x5E74C0 Offset: 0x5E66C0 VA: 0x1805E74C0
+	protected static void CopyStream(Stream input, Stream output, int bufferSize) { }
 
-[RC4] 14 match:
-  line 736989 [ValidationResult]: public const CipherSuiteCode TLS_RSA_EXPORT_WITH_RC4_40_MD5 = 3;
-  line 736990 [ValidationResult]: public const CipherSuiteCode TLS_RSA_WITH_RC4_128_MD5 = 4;
-  line 736991 [ValidationResult]: public const CipherSuiteCode TLS_RSA_WITH_RC4_128_SHA = 5;
-  line 737009 [ValidationResult]: public const CipherSuiteCode TLS_DH_anon_EXPORT_WITH_RC4_40_MD5 = 23;
-  line 737010 [ValidationResult]: public const CipherSuiteCode TLS_DH_anon_WITH_RC4_128_MD5 = 24;
-  line 737056 [ValidationResult]: public const CipherSuiteCode TLS_PSK_WITH_RC4_128_SHA = 138;
-  line 737060 [ValidationResult]: public const CipherSuiteCode TLS_DHE_PSK_WITH_RC4_128_SHA = 142;
-  line 737064 [ValidationResult]: public const CipherSuiteCode TLS_RSA_PSK_WITH_RC4_128_SHA = 146;
+	// RVA: 0x435870 Offset: 0x434A70 VA: 0x180435870
+	protected void .ctor() { }
+}
 
-[RC2] 6 match:
-  line 66527 [PasswordDeriveBytes]: public abstract class RC2 : SymmetricAlgorithm // TypeDefIndex: 797
-  line 66558 [PasswordDeriveBytes]: public sealed class RC2CryptoServiceProvider : RC2 // TypeDefIndex: 798
-  line 67708 [RC2Transform]: internal class RC2Transform : SymmetricTransform // TypeDefIndex: 831
-  line 67722 [RC2Transform]: public void .ctor(RC2 rc2Algo, bool encryption, byte[] key, byte[] iv) { }
-  line 678354 [V256DebugView]: private static v128 Select4(v256 src1, v256 src2, int control) { }
-  line 736992 [ValidationResult]: public const CipherSuiteCode TLS_RSA_EXPORT_WITH_RC2_CBC_40_MD5 = 6;
+============================================================
+ CLASS: AESEncryptionAlgorithm (24 lines)
+============================================================
+public class AESEncryptionAlgorithm : EncryptionAlgorithm // TypeDefIndex: 3426
+{
+	// Fields
+	private const int ivSize = 16;
+	private const int keySize = 16;
+	private const int pwIterations = 100;
 
-[DES] 5313 match:
-  line 369 []: internal IntPtr lpSecurityDescriptor; // 0x8
-  line 444 []: private static extern IntPtr CreateFilePrivate(string lpFileName, int dwDesiredAccess, FileShare dwShareMode, Interop.Kernel32.SECURITY_ATTRIBUTES* securityAttrs, FileMode dwCreationDisposition, int dwFlagsAndAttributes, IntPtr hTemplateFile) { }
-  line 447 []: internal static SafeFileHandle CreateFile(string lpFileName, int dwDesiredAccess, FileShare dwShareMode, FileMode dwCreationDisposition, int dwFlagsAndAttributes) { }
-  line 450 []: internal static IntPtr CreateFile_IntPtr(string lpFileName, int dwDesiredAccess, FileShare dwShareMode, FileMode dwCreationDisposition, int dwFlagsAndAttributes) { }
-  line 676 [Interop]: public const Interop.NtDll.FILE_INFORMATION_CLASS FileDesiredStorageClassInformation = 67;
-  line 704 [Interop]: public void* SecurityDescriptor; // 0x20
-  line 770 [Interop]: public enum Interop.NtDll.DesiredAccess // TypeDefIndex: 37
-  line 774 [Interop]: public const Interop.NtDll.DesiredAccess FILE_READ_DATA = 1;
+	// Methods
 
-[CIPHER] 319 match:
-  line 65807 [CryptoStream]: public enum CipherMode // TypeDefIndex: 769
-  line 65811 [CryptoStream]: public const CipherMode CBC = 1;
-  line 65812 [CryptoStream]: public const CipherMode ECB = 2;
-  line 65813 [CryptoStream]: public const CipherMode OFB = 3;
-  line 65814 [CryptoStream]: public const CipherMode CFB = 4;
-  line 65815 [CryptoStream]: public const CipherMode CTS = 5;
-  line 66630 [PasswordDeriveBytes]: private ICryptoTransform NewEncryptor(byte[] rgbKey, CipherMode mode, byte[] rgbIV, int feedbackSize, RijndaelManagedTransformMode encryptMode) { }
-  line 66648 [PasswordDeriveBytes]: private CipherMode m_cipherMode; // 0x10
+	// RVA: 0x5C5AC0 Offset: 0x5C4CC0 VA: 0x1805C5AC0 Slot: 4
+	public override byte[] Encrypt(byte[] bytes, string password, int bufferSize) { }
 
-[RIJNDAEL] 10 match:
-  line 66593 [PasswordDeriveBytes]: public abstract class Rijndael : SymmetricAlgorithm // TypeDefIndex: 799
-  line 66610 [PasswordDeriveBytes]: public sealed class RijndaelManaged : Rijndael // TypeDefIndex: 800
-  line 66630 [PasswordDeriveBytes]: private ICryptoTransform NewEncryptor(byte[] rgbKey, CipherMode mode, byte[] rgbIV, int feedbackSize, RijndaelManagedTransformMode encryptMode) { }
-  line 66635 [PasswordDeriveBytes]: internal enum RijndaelManagedTransformMode // TypeDefIndex: 801
-  line 66639 [PasswordDeriveBytes]: public const RijndaelManagedTransformMode Encrypt = 0;
-  line 66640 [PasswordDeriveBytes]: public const RijndaelManagedTransformMode Decrypt = 1;
-  line 66645 [PasswordDeriveBytes]: public sealed class RijndaelManagedTransform : ICryptoTransform, IDisposable // TypeDefIndex: 802
-  line 66650 [PasswordDeriveBytes]: private RijndaelManagedTransformMode m_transformMode; // 0x18
+	// RVA: 0x5C54F0 Offset: 0x5C46F0 VA: 0x1805C54F0 Slot: 5
+	public override byte[] Decrypt(byte[] bytes, string password, int bufferSize) { }
 
-[DECIPHER] 1 match:
-  line 351482 [AsnEncodedData]: public const X509KeyUsageFlags DecipherOnly = 32768;
+	// RVA: 0x5C5C90 Offset: 0x5C4E90 VA: 0x1805C5C90 Slot: 6
+	public override void Encrypt(Stream input, Stream output, string password, int bufferSize) { }
 
-[CRYPT] 393 match:
-  line 514 []: internal enum Interop.BCrypt.NTSTATUS // TypeDefIndex: 22
-  line 518 []: public const Interop.BCrypt.NTSTATUS STATUS_SUCCESS = 0;
-  line 519 []: public const Interop.BCrypt.NTSTATUS STATUS_NOT_FOUND = 3221226021;
-  line 520 []: public const Interop.BCrypt.NTSTATUS STATUS_INVALID_PARAMETER = 3221225485;
-  line 521 []: public const Interop.BCrypt.NTSTATUS STATUS_NO_MEMORY = 3221225495;
-  line 525 [Interop]: internal class Interop.BCrypt // TypeDefIndex: 23
-  line 530 [Interop]: internal static extern Interop.BCrypt.NTSTATUS BCryptGenRandom(IntPtr hAlgorithm, byte* pbBuffer, int cbBuffer, int dwFlags) { }
-  line 2184 [ASN1]: // Namespace: Mono.Security.Cryptography
+	// RVA: 0x5C56C0 Offset: 0x5C48C0 VA: 0x1805C56C0 Slot: 7
+	public override void Decrypt(Stream input, Stream output, string password, int bufferSize) { }
 
-[HASH] 9677 match:
-  line 997 [Interop]: public override int GetHashCode() { }
-  line 1070 [Interop]: public override int GetHashCode() { }
-  line 1094 [Interop]: public override int GetHashCode() { }
-  line 1206 [Interop]: internal IntPtr hash_value; // 0x10
-  line 1210 [Interop]: internal uint hash_alg; // 0x34
-  line 1211 [Interop]: internal uint hash_len; // 0x38
-  line 2317 [KeyPairPersistence]: internal abstract class MD2 : HashAlgorithm // TypeDefIndex: 97
-  line 2351 [MD2Managed]: protected override void HashCore(byte[] array, int ibStart, int cbSize) { }
+	// RVA: 0x435870 Offset: 0x434A70 VA: 0x180435870
+	public void .ctor() { }
+}
 
-[HMAC] 11 match:
-  line 65248 [Rfc2898DeriveBytes]: private HMAC _hmac; // 0x28
-  line 65282 [Rfc2898DeriveBytes]: private HMAC OpenHmac() { }
-  line 66131 [DSASignatureFormatter]: public abstract class HMAC : KeyedHashAlgorithm // TypeDefIndex: 783
-  line 66167 [DSASignatureFormatter]: public static HMAC Create() { }
-  line 66187 [HMACMD5]: public class HMACMD5 : HMAC // TypeDefIndex: 784
-  line 66200 [HMACRIPEMD160]: public class HMACRIPEMD160 : HMAC // TypeDefIndex: 785
-  line 66213 [HMACSHA1]: public class HMACSHA1 : HMAC // TypeDefIndex: 786
-  line 66229 [HMACSHA256]: public class HMACSHA256 : HMAC // TypeDefIndex: 787
+============================================================
+ CLASS: UnbufferedCryptoStream (18 lines)
+============================================================
+public class UnbufferedCryptoStream : MemoryStream // TypeDefIndex: 3427
+{
+	// Fields
+	private readonly Stream stream; // 0x50
+	private readonly bool isReadStream; // 0x58
+	private string password; // 0x60
+	private int bufferSize; // 0x68
+	private EncryptionAlgorithm alg; // 0x70
+	private bool disposed; // 0x78
 
-[KEY] 15241 match:
-  line 211 []: public struct Interop.Kernel32.TIME_DYNAMIC_ZONE_INFORMATION.<TimeZoneKeyName>e__FixedBuffer // TypeDefIndex: 8
-  line 231 []: internal Interop.Kernel32.TIME_DYNAMIC_ZONE_INFORMATION.<TimeZoneKeyName>e__FixedBuffer TimeZoneKeyName; // 0xAC
-  line 237 []: internal string GetTimeZoneKeyName() { }
-  line 826 [Interop]: internal static extern int RegCloseKey(IntPtr hKey) { }
-  line 829 [Interop]: internal static extern int RegEnumKeyEx(SafeRegistryHandle hKey, int dwIndex, char[] lpName, ref int lpcbName, int[] lpReserved, [Out] StringBuilder lpClass, int[] lpcbClass, long[] lpftLastWriteTime) { }
-  line 832 [Interop]: internal static extern int RegOpenKeyEx(SafeRegistryHandle hKey, string lpSubKey, int ulOptions, int samDesired, out SafeRegistryHandle hkResult) { }
-  line 835 [Interop]: internal static extern int RegQueryInfoKey(SafeRegistryHandle hKey, [Out] StringBuilder lpClass, int[] lpcbClass, IntPtr lpReserved_MustBeZero, ref int lpcSubKeys, int[] lpcbMaxSubKeyLen, int[] lpcbMaxClassLen, ref int lpcValues, int[] lpcbMaxValueNameLen, int[] lpcbMaxValueLen, int[] lpcbSecurityDescriptor, int[] lpftLastWriteTime) { }
-  line 838 [Interop]: internal static extern int RegQueryValueEx(SafeRegistryHandle hKey, string lpValueName, int[] lpReserved, ref int lpType, [Out] byte[] lpData, ref int lpcbData) { }
+	// Methods
 
-[IV] 74872 match:
-  line 6 []: // Image 5: Unity.RenderPipelines.Universal.Runtime.dll - 6516
-  line 74 []: // Image 73: LeTai.TranslucentImage.UniversalRP.dll - 15135
-  line 94 []: // Image 93: Unity.RenderPipeline.Universal.ShaderLibrary.dll - 15273
-  line 139 []: private Interop.Kernel32.WIN32_FIND_DATA.<_cFileName>e__FixedBuffer _cFileName; // 0x2C
-  line 141 []: private Interop.Kernel32.WIN32_FIND_DATA.<_cAlternateFileName>e__FixedBuffer _cAlternateFileName; // 0x234
-  line 394 []: private static bool useUWPFallback; // 0x0
-  line 405 []: internal static extern bool DeleteVolumeMountPointPrivate(string mountPoint) { }
-  line 432 []: private static extern bool CopyFileExPrivate(string src, string dst, IntPtr progressRoutine, IntPtr progressData, ref int cancel, int flags) { }
+	// RVA: 0x5E78A0 Offset: 0x5E6AA0 VA: 0x1805E78A0
+	public void .ctor(Stream stream, bool isReadStream, string password, int bufferSize, EncryptionAlgorithm alg) { }
 
-[SALT] 46 match:
-  line 10686 [BadImageFormatException]: public DateTime ToUniversalTime() { }
-  line 65246 [Rfc2898DeriveBytes]: private byte[] _salt; // 0x18
-  line 65267 [Rfc2898DeriveBytes]: public void .ctor(byte[] password, byte[] salt, int iterations, HashAlgorithmName hashAlgorithm) { }
-  line 65270 [Rfc2898DeriveBytes]: public void .ctor(string password, byte[] salt, int iterations) { }
-  line 65273 [Rfc2898DeriveBytes]: public void .ctor(string password, byte[] salt, int iterations, HashAlgorithmName hashAlgorithm) { }
-  line 66453 [PasswordDeriveBytes]: private byte[] _salt; // 0x30
-  line 66461 [PasswordDeriveBytes]: public byte[] Salt { set; }
-  line 66466 [PasswordDeriveBytes]: public void .ctor(string strPassword, byte[] rgbSalt) { }
+	// RVA: 0x5E7810 Offset: 0x5E6A10 VA: 0x1805E7810 Slot: 20
+	protected override void Dispose(bool disposing) { }
+}
 
-[SCRAMBLE] 2 match:
-  line 588072 [UnsafeQueueBlockPool]: internal static void Avx2ScrambleAcc(ulong* acc, byte* secret) { }
-  line 588239 [UnsafeQueueBlockPool]: internal static void DefaultScrambleAcc(ulong* acc, byte* secret) { }
+============================================================
+ CLASS: CTWebClient (42 lines)
+============================================================
+public class CTWebClient : WebClient // TypeDefIndex: 3476
+{
+	// Fields
+	[CompilerGenerated]
+	private int <Timeout>k__BackingField; // 0x68
+	[CompilerGenerated]
+	private int <ConnectionLimit>k__BackingField; // 0x6C
 
-[ENCODE] 172 match:
-  line 2424 [MD4Managed]: private void Encode(byte[] output, uint[] input) { }
-  line 2466 [MD4Managed]: public static byte[] Encode_v15(HashAlgorithm hash, byte[] hashValue, int emLength) { }
-  line 9527 [BadImageFormatException]: private static int Decode(ref char encodedChars, ref sbyte decodingMap) { }
-  line 62118 [ASCIIEncoding]: internal override int GetByteCount(char* chars, int charCount, EncoderNLS encoder) { }
-  line 62121 [ASCIIEncoding]: internal override int GetBytes(char* chars, int charCount, byte* bytes, int byteCount, EncoderNLS encoder) { }
-  line 62139 [ASCIIEncoding]: public override Encoder GetEncoder() { }
-  line 62550 [DecoderNLS]: public abstract class Encoder // TypeDefIndex: 696
-  line 62553 [DecoderNLS]: internal EncoderFallback _fallback; // 0x10
+	// Properties
+	public int Timeout { get; set; }
+	public int ConnectionLimit { get; set; }
 
-[DECODE] 180 match:
-  line 1141 [Interop]: private static int DecodeBlobSize(IntPtr in_ptr, out IntPtr out_ptr) { }
-  line 1144 [Interop]: internal static byte[] DecodeBlobArray(IntPtr ptr) { }
-  line 2145 [ASN1]: protected void Decode(byte[] asn1, ref int anPos, int anLength) { }
-  line 2148 [ASN1]: protected void DecodeTLV(byte[] asn1, ref int pos, out byte tag, out int length, out byte[] content) { }
-  line 2427 [MD4Managed]: private void Decode(uint[] output, byte[] input, int index) { }
-  line 9524 [BadImageFormatException]: private static bool TryDecodeFromUtf16(ReadOnlySpan<char> utf16, Span<byte> bytes, out int consumed, out int written) { }
-  line 9527 [BadImageFormatException]: private static int Decode(ref char encodedChars, ref sbyte decodingMap) { }
-  line 62124 [ASCIIEncoding]: internal override int GetCharCount(byte* bytes, int count, DecoderNLS decoder) { }
+	// Methods
 
---- FILE LOADING (dump.cs) ---
+	[CompilerGenerated]
+	// RVA: 0x5ED6C0 Offset: 0x5EC8C0 VA: 0x1805ED6C0
+	public int get_Timeout() { }
 
-[ENPC] 1 match:
-  line 265677 [Town]: private void ActivateNpcSpawner() { }
+	[CompilerGenerated]
+	// RVA: 0x5ED6E0 Offset: 0x5EC8E0 VA: 0x1805ED6E0
+	public void set_Timeout(int value) { }
 
-[EITEM] 458 match:
-  line 22168 [UnhandledExceptionEventArgs]: |-ThrowHelper.IfNullAndNullsAreIllegalThenThrow<TreeItem>
-  line 22548 [Array]: |-Array.InternalEnumerator<Dictionary.Entry<int, TreeItem>>..ctor
-  line 22677 [Array]: |-Array.InternalEnumerator<KeyValuePair<int, TreeItem>>..ctor
-  line 23111 [Array]: |-Array.InternalEnumerator<TreeItem>..ctor
-  line 23331 [Array]: |-Array.InternalEnumerator<Shop.SaleItem>..ctor
-  line 23454 [Array]: |-Array.InternalEnumerator<Dictionary.Entry<int, TreeItem>>.Dispose
-  line 23583 [Array]: |-Array.InternalEnumerator<KeyValuePair<int, TreeItem>>.Dispose
-  line 24017 [Array]: |-Array.InternalEnumerator<TreeItem>.Dispose
+	[CompilerGenerated]
+	// RVA: 0x5ED6B0 Offset: 0x5EC8B0 VA: 0x1805ED6B0
+	public int get_ConnectionLimit() { }
 
-[EPLAYER] 22 match:
-  line 201198 [PositionSaver]: private bool m_usePlayerSpawnpoint; // 0x40
-  line 201207 [PositionSaver]: public bool usePlayerSpawnpoint { get; set; }
-  line 201219 [PositionSaver]: public bool get_usePlayerSpawnpoint() { }
-  line 201222 [PositionSaver]: public void set_usePlayerSpawnpoint(bool value) { }
-  line 204592 [UILocalizationManager]: private string m_currentLanguagePlayerPrefsKey; // 0x20
-  line 204621 [UILocalizationManager]: public string currentLanguagePlayerPrefsKey { get; set; }
-  line 204661 [UILocalizationManager]: public string get_currentLanguagePlayerPrefsKey() { }
-  line 204664 [UILocalizationManager]: public void set_currentLanguagePlayerPrefsKey(string value) { }
+	[CompilerGenerated]
+	// RVA: 0x5ED6D0 Offset: 0x5EC8D0 VA: 0x1805ED6D0
+	public void set_ConnectionLimit(int value) { }
 
-[ESOUND] 13 match:
-  line 247887 [InteractiveObject]: public AudioClip CloseSound; // 0x30
-  line 251877 [BaseConfig]: public static int PewAudienceSound; // 0xE0
-  line 251895 [BaseConfig]: public static int PewAudienceSoundInit; // 0x128
-  line 252168 [BgmController]: public void PlayPreSound() { }
-  line 265775 [TownManager]: public void ChangeSound(Town town) { }
-  line 266432 [UI_Config]: private BasicToggle pewAudienceSound; // 0x198
-  line 283054 [ETFXEffectController]: public bool disableSound; // 0x2D
-  line 283150 [ETFXEffectControllerPooled]: public bool disableSound; // 0x35
+	// RVA: 0x5ED5E0 Offset: 0x5EC7E0 VA: 0x1805ED5E0
+	public void .ctor() { }
 
-[EAUTH] 90 match:
-  line 78820 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder.Start<MobileAuthenticatedStream.<InnerWrite>d__67>
-  line 78823 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder.Start<MobileAuthenticatedStream.<ProcessAuthentication>d__48>
-  line 78895 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ConfiguredTaskAwaitable.ConfiguredTaskAwaiter<object>, MobileAuthenticatedStream.<ProcessAuthentication>d__48>
-  line 78937 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ConfiguredTaskAwaitable.ConfiguredTaskAwaiter, MobileAuthenticatedStream.<InnerWrite>d__67>
-  line 79052 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder<int>.Start<MobileAuthenticatedStream.<InnerRead>d__66>
-  line 79055 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder<int>.Start<MobileAuthenticatedStream.<StartOperation>d__57>
-  line 79165 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder<int>.AwaitUnsafeOnCompleted<ConfiguredTaskAwaitable.ConfiguredTaskAwaiter<int>, MobileAuthenticatedStream.<InnerRead>d__66>
-  line 79175 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder<int>.AwaitUnsafeOnCompleted<ConfiguredTaskAwaitable.ConfiguredTaskAwaiter<object>, MobileAuthenticatedStream.<StartOperation>d__57>
+	// RVA: 0x5ED640 Offset: 0x5EC840 VA: 0x1805ED640
+	public void .ctor(int timeout, int connectionLimit = 20) { }
 
-[STREAMINGASSETS] 5 match:
-  line 246631 [CTWebClient]: public static string StreamingAssetsPath { get; }
-  line 246641 [CTWebClient]: public static string get_StreamingAssetsPath() { }
-  line 443514 [Application]: public static string streamingAssetsPath { get; }
-  line 443558 [Application]: [FreeFunction("GetStreamingAssetsPath", IsThreadSafe = True)]
-  line 443560 [Application]: public static string get_streamingAssetsPath() { }
+	// RVA: 0x5ED400 Offset: 0x5EC600 VA: 0x1805ED400
+	public WebRequest CTGetWebRequest(string uri) { }
 
-[LOADFILE] 37 match:
-  line 182626 [UnityObjectType]: private sealed class ES3Cloud.<DownloadFile>d__44 : IEnumerator<object>, IEnumerator, IDisposable // TypeDefIndex: 1805
-  line 182673 [UnityObjectType]: private sealed class ES3Cloud.<DownloadFile>d__45 : IEnumerator<object>, IEnumerator, IDisposable // TypeDefIndex: 1806
-  line 182720 [UnityObjectType]: private sealed class ES3Cloud.<DownloadFilenames>d__61 : IEnumerator<object>, IEnumerator, IDisposable // TypeDefIndex: 1807
-  line 182946 [UnityObjectType]: private sealed class ES3Cloud.<UploadFile>d__33 : IEnumerator<object>, IEnumerator, IDisposable // TypeDefIndex: 1812
-  line 183053 [ES3Cloud]: public IEnumerator UploadFile() { }
-  line 183056 [ES3Cloud]: public IEnumerator UploadFile(string filePath) { }
-  line 183059 [ES3Cloud]: public IEnumerator UploadFile(string filePath, string user) { }
-  line 183062 [ES3Cloud]: public IEnumerator UploadFile(string filePath, string user, string password) { }
+	// RVA: 0x5ED480 Offset: 0x5EC680 VA: 0x1805ED480 Slot: 12
+	protected override WebRequest GetWebRequest(Uri uri) { }
+}
 
-[READALLBYTES] 4 match:
-  line 177066 [EnumerationOptions]: public static byte[] ReadAllBytes(string path) { }
-  line 177069 [EnumerationOptions]: private static byte[] ReadAllBytesUnknownLength(FileStream fs) { }
-  line 243843 [UnbufferedCryptoStream]: public static byte[] ReadAllBytes(string path) { }
-  line 246774 [CTWebClient]: public static byte[] ReadAllBytes(string sourceFile) { }
+============================================================
+ CLASS: SeekableAesStream (58 lines)
+============================================================
+public class SeekableAesStream : Stream // TypeDefIndex: 3877
+{
+	// Fields
+	private readonly Stream baseStream; // 0x28
+	private readonly AesManaged aes; // 0x30
+	private readonly ICryptoTransform encryptor; // 0x38
 
-[FILESTREAM] 22 match:
-  line 307 []: public const Interop.Kernel32.FILE_INFO_BY_HANDLE_CLASS FileStreamInfo = 7;
-  line 631 [Interop]: public const Interop.NtDll.FILE_INFORMATION_CLASS FileStreamInformation = 22;
-  line 79100 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder<object>.Start<XmlDownloadManager.<GetNonFileStreamAsync>d__5>
-  line 79208 [ReflectionBlockedAttribute]: |-AsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<ConfiguredTaskAwaitable.ConfiguredTaskAwaiter<object>, XmlDownloadManager.<GetNonFileStreamAsync>d__5>
-  line 177018 [EnumerationOptions]: public static FileStream Create(string path) { }
-  line 177021 [EnumerationOptions]: public static FileStream Create(string path, int bufferSize) { }
-  line 177030 [EnumerationOptions]: public static FileStream Open(string path, FileMode mode) { }
-  line 177033 [EnumerationOptions]: public static FileStream Open(string path, FileMode mode, FileAccess access, FileShare share) { }
+	// Properties
+	public override bool CanRead { get; }
+	public override bool CanSeek { get; }
+	public override bool CanWrite { get; }
+	public override long Length { get; }
+	public override long Position { get; set; }
 
-[BINARYREADER] 27 match:
-  line 75844 [ObjectReader]: private BinaryReader dataReader; // 0x68
-  line 81690 [ResourceManager]: private BinaryReader _store; // 0x10
-  line 178082 [BinaryReader]: public class BinaryReader : IDisposable // TypeDefIndex: 1674
-  line 216759 [PersistentDataManager]: private static LuaValue ReadValue(BinaryReader reader) { }
-  line 216762 [PersistentDataManager]: private static void ReadTable(BinaryReader reader, LuaTable table) { }
-  line 216768 [PersistentDataManager]: private static void ApplyExtraData(BinaryReader reader) { }
-  line 286868 [FoliageDataSerializer]: private static void ReadFoliageData(BinaryReader a, FoliageData data) { }
-  line 286871 [FoliageDataSerializer]: private static void ReadFoliageCellData(BinaryReader a, out int key, out FoliageCellData data) { }
+	// Methods
 
---- GAME DATA (dump.cs) ---
+	// RVA: 0x87EE40 Offset: 0x87E040 VA: 0x18087EE40
+	public void .ctor(Stream baseStream, string password, byte[] salt) { }
 
-[NPC] 94 match:
-  line 209470 [Asset]: public const CharacterType NPC = 1;
-  line 209693 [ConversationOverrideDisplaySettings]: public bool showNPCSubtitlesDuringLine; // 0x12
-  line 209694 [ConversationOverrideDisplaySettings]: public bool showNPCSubtitlesWithResponses; // 0x13
-  line 211280 [Template]: public Color npcLineColor; // 0x88
-  line 211983 [ConversationModel]: private void AddForcedLink(List<Response> npcResponses, List<Response> pcResponses) { }
+	// RVA: 0x87E9B0 Offset: 0x87DBB0 VA: 0x18087E9B0
+	private void Cipher(byte[] buffer, int offset, int count, long streamPos) { }
 
-[DIALOG] 1532 match:
-  line 205488 [TriggerEvent]: // Namespace: PixelCrushers.DialogueSystem
-  line 205497 [DemoInputRegistration]: // Namespace: PixelCrushers.DialogueSystem
-  line 205502 [CommonLibraryLua]: [Tooltip("Unregister functions when this component is disabled. Leave unticked if this script is on Dialogue Manager or other persistent GameObject.")]
-  line 205528 [CommonLibraryLua]: // Namespace: PixelCrushers.DialogueSystem
-  line 205595 [LuaConsole]: // Namespace: PixelCrushers.DialogueSystem
+	// RVA: 0x87F150 Offset: 0x87E350 VA: 0x18087F150 Slot: 7
+	public override bool get_CanRead() { }
 
-[QUEST] 1985 match:
-  line 49 []: // Image 48: UnityEngine.UnityWebRequestModule.dll - 14621
-  line 82 []: // Image 81: UnityEngine.UnityWebRequestAudioModule.dll - 15200
-  line 4853 [ReflectionExecutionDomainCallbacks]: |-Action<UnitySynchronizationContext.WorkRequest>..ctor
-  line 4876 [ReflectionExecutionDomainCallbacks]: |-Action<AsyncGPUReadbackRequest>..ctor
-  line 5045 [ReflectionExecutionDomainCallbacks]: |-Action<AdditionalLightsShadowCasterPass.ShadowResolutionRequest>..ctor
+	// RVA: 0x87F180 Offset: 0x87E380 VA: 0x18087F180 Slot: 8
+	public override bool get_CanSeek() { }
 
-[ITEM] 12050 match:
-  line 1098 [Interop]: [DefaultMember("Item")]
-  line 1106 [Interop]: internal IntPtr Item { get; }
-  line 1117 [Interop]: internal IntPtr get_Item(int i) { }
-  line 1228 [Interop]: public T1 Item1; // 0x0
-  line 1235 [Interop]: public T1 Item1; // 0x0
+	// RVA: 0x87F1B0 Offset: 0x87E3B0 VA: 0x18087F1B0 Slot: 10
+	public override bool get_CanWrite() { }
 
-[PLAYER] 1261 match:
-  line 4910 [ReflectionExecutionDomainCallbacks]: |-Action<FlowTilemapRenderer.TilemapLayerRenderData>..ctor
-  line 5024 [ReflectionExecutionDomainCallbacks]: |-Action<PlayerLoopSystem>..ctor
-  line 5025 [ReflectionExecutionDomainCallbacks]: |-Action<PlayerLoopSystemInternal>..ctor
-  line 5212 [ReflectionExecutionDomainCallbacks]: |-Action<FlowTilemapRenderer.TilemapLayerRenderData>.Invoke
-  line 5329 [ReflectionExecutionDomainCallbacks]: |-Action<PlayerLoopSystem>.Invoke
+	// RVA: 0x87F1E0 Offset: 0x87E3E0 VA: 0x18087F1E0 Slot: 11
+	public override long get_Length() { }
 
-[SAVE] 718 match:
-  line 2250 [KeyPairPersistence]: public void Save() { }
-  line 53257 [TermInfoReader]: public const TermInfoStrings SaveCursor = 128;
-  line 53312 [TermInfoReader]: public const TermInfoStrings KeySave = 183;
-  line 53341 [TermInfoReader]: public const TermInfoStrings KeySsave = 212;
-  line 65069 [Tokenizer]: private int _inSavedCharacter; // 0x38
+	// RVA: 0x87F210 Offset: 0x87E410 VA: 0x18087F210 Slot: 12
+	public override long get_Position() { }
 
-[LOAD] 1379 match:
-  line 414 []: internal static extern SafeLibraryHandle LoadLibraryEx(string libFilename, IntPtr reserved, int flags) { }
-  line 539 [Interop]: internal static extern int LoadString(SafeLibraryHandle handle, int id, [Out] StringBuilder buffer, int bufferLength) { }
-  line 928 [Interop]: private static ISystemDependencyProvider ReflectionLoad() { }
-  line 1340 [SecurityParser]: public void LoadXml(string xml) { }
-  line 2247 [KeyPairPersistence]: public bool Load() { }
+	// RVA: 0x87F240 Offset: 0x87E440 VA: 0x18087F240 Slot: 13
+	public override void set_Position(long value) { }
 
-[DATABASE] 453 match:
-  line 23240 [Array]: |-Array.InternalEnumerator<ItemDatabase.Recipe>..ctor
-  line 23241 [Array]: |-Array.InternalEnumerator<ItemDatabase.RecipeElement>..ctor
-  line 24146 [Array]: |-Array.InternalEnumerator<ItemDatabase.Recipe>.Dispose
-  line 24147 [Array]: |-Array.InternalEnumerator<ItemDatabase.RecipeElement>.Dispose
-  line 25052 [Array]: |-Array.InternalEnumerator<ItemDatabase.Recipe>.MoveNext
+	// RVA: 0x87EC60 Offset: 0x87DE60 VA: 0x18087EC60 Slot: 21
+	public override void Flush() { }
 
-[MASTERDATA] 16 match:
-  line 206345 [AssetBundleManager]: public static DialogueDatabase masterDatabase { get; }
-  line 206370 [AssetBundleManager]: public static DialogueDatabase MasterDatabase { get; }
-  line 206400 [AssetBundleManager]: public static DialogueDatabase get_masterDatabase() { }
-  line 206499 [AssetBundleManager]: public static DialogueDatabase get_MasterDatabase() { }
-  line 206586 [AssetBundleManager]: public static void PreloadMasterDatabase() { }
+	// RVA: 0x87ED70 Offset: 0x87DF70 VA: 0x18087ED70 Slot: 32
+	public override void SetLength(long value) { }
 
-[GAMEDATA] 60 match:
-  line 200457 [SavedGameData]: public class SavedGameData.SaveRecord // TypeDefIndex: 2268
-  line 200476 [SavedGameData]: private sealed class SavedGameData.<>c // TypeDefIndex: 2269
-  line 200479 [SavedGameData]: public static readonly SavedGameData.<>c <>9; // 0x0
-  line 200480 [SavedGameData]: public static Func<KeyValuePair<string, SavedGameData.SaveRecord>, string> <>9__19_1; // 0x8
-  line 200481 [SavedGameData]: public static Func<KeyValuePair<string, SavedGameData.SaveRecord>, SavedGameData.SaveRecord> <>9__19_2; // 0x10
+	// RVA: 0x87ED40 Offset: 0x87DF40 VA: 0x18087ED40 Slot: 31
+	public override long Seek(long offset, SeekOrigin origin) { }
 
-[JSONDATA] 5 match:
-  line 202130 [JsonDataSerializer]: public class JsonDataSerializer : DataSerializer // TypeDefIndex: 2313
-  line 202156 [JsonDataSerializer]: |-JsonDataSerializer.Deserialize<object>
-  line 202159 [JsonDataSerializer]: |-JsonDataSerializer.Deserialize<__Il2CppFullySharedGenericType>
-  line 216052 [DialogueSystemSaver]: [Tooltip("Save using raw data dump. If your database is extremely large, this method is faster but generates larger saved game data. If you use this option, use BinaryDataSerializer instead of JsonDataSerializer or data will be ridiculously large.")]
-  line 233410 [JsonDataSerializer]: public class JsonDataSerializer : JsonDataSerializer // TypeDefIndex: 3213
+	// RVA: 0x87EC90 Offset: 0x87DE90 VA: 0x18087EC90 Slot: 33
+	public override int Read(byte[] buffer, int offset, int count) { }
 
-[LOCALIZE] 112 match:
-  line 4582 [ReflectionExecutionDomainCallbacks]: private static string TryGetLocalizedNameByMuiNativeResource(string resource) { }
-  line 4585 [ReflectionExecutionDomainCallbacks]: private static string TryGetLocalizedNameByNativeResource(string filePath, int resource) { }
-  line 4588 [ReflectionExecutionDomainCallbacks]: private static void GetLocalizedNamesByRegistryKey(RegistryKey key, out string displayName, out string standardName, out string daylightName) { }
-  line 51369 [UnitySerializationHolder]: public const Environment.SpecialFolder LocalizedResources = 57;
-  line 88388 [HebrewNumber]: public const TimeSpanParse.TimeSpanStandardStyles Localized = 2;
+	// RVA: 0x87EDA0 Offset: 0x87DFA0 VA: 0x18087EDA0 Slot: 36
+	public override void Write(byte[] buffer, int offset, int count) { }
 
-[LANGUAGE] 450 match:
-  line 417 []: internal static extern bool GetFileMUIPath(uint flags, string filePath, [Out] StringBuilder language, ref int languageLength, [Out] StringBuilder fileMuiPath, ref int fileMuiPathLength, ref long enumerator) { }
-  line 468 []: private static extern int FormatMessage(int dwFlags, IntPtr lpSource, uint dwMessageId, int dwLanguageId, char* lpBuffer, int nSize, IntPtr[] arguments) { }
-  line 4924 [ReflectionExecutionDomainCallbacks]: |-Action<TextTable.LanguageKeyValuePair>..ctor
-  line 5226 [ReflectionExecutionDomainCallbacks]: |-Action<TextTable.LanguageKeyValuePair>.Invoke
-  line 7120 [ReflectionExecutionDomainCallbacks]: |-Comparison<TextTable.LanguageKeyValuePair>..ctor
-
-[TRANSLATE] 246 match:
-  line 6595 [ReflectionExecutionDomainCallbacks]: |-Func<Translate, Translate, bool>..ctor
-  line 6788 [ReflectionExecutionDomainCallbacks]: |-Func<Translate, Translate, bool>.Invoke
-  line 22515 [Array]: |-Array.InternalEnumerator<StylePropertyAnimationSystem.Values.EmptyData<Translate>>..ctor
-  line 22817 [Array]: |-Array.InternalEnumerator<StylePropertyAnimationSystem.Values.StyleData<Translate>>..ctor
-  line 22848 [Array]: |-Array.InternalEnumerator<StylePropertyAnimationSystem.Values.TimingData<Translate>>..ctor
-
-[TEXT] 13517 match:
-  line 15 []: // Image 14: Unity.TextMeshPro.dll - 10675
-  line 22 []: // Image 21: UnityEngine.TextCoreTextEngineModule.dll - 12398
-  line 50 []: // Image 49: UnityEngine.TextCoreFontEngineModule.dll - 14635
-  line 61 []: // Image 60: UnityEngine.TextRenderingModule.dll - 14893
-  line 292 []: internal IntPtr pvCallbackContext; // 0x18
-
-[STRING] 19332 match:
-  line 152 []: internal void SetFileName(string fileName) { }
-  line 237 []: internal string GetTimeZoneKeyName() { }
-  line 278 []: internal string GetStandardName() { }
-  line 281 []: internal string GetDaylightName() { }
-  line 399 []: internal static int CopyFileUWP(string src, string dst, bool failIfExists) { }
-
-[MESSAGE] 1254 match:
-  line 468 []: private static extern int FormatMessage(int dwFlags, IntPtr lpSource, uint dwMessageId, int dwLanguageId, char* lpBuffer, int nSize, IntPtr[] arguments) { }
-  line 471 []: internal static string GetMessage(int errorCode) { }
-  line 474 []: internal static string GetMessage(IntPtr moduleHandle, int errorCode) { }
-  line 477 []: private static bool TryGetErrorMessage(IntPtr moduleHandle, int errorCode, Span<char> buffer, out string errorMsg) { }
-  line 3275 [SequentialSearchPrimeGeneratorBase]: public static string GetMessage(int hr) { }
-
-[CONVERSATION] 635 match:
-  line 206200 [ActiveConversationRecord]: public class ActiveConversationRecord // TypeDefIndex: 2412
-  line 206204 [ActiveConversationRecord]: private string <conversationTitle>k__BackingField; // 0x10
-  line 206210 [ActiveConversationRecord]: private ConversationController <conversationController>k__BackingField; // 0x28
-  line 206217 [ActiveConversationRecord]: public string conversationTitle { get; set; }
-  line 206220 [ActiveConversationRecord]: public ConversationController conversationController { get; set; }
-
-[TALK] 37 match:
-  line 252784 [ConstString]: public const string DEFAULT_VILLAGER_TALK_1 = "DefaultVillagerTalk_1";
-  line 252785 [ConstString]: public const string DEFAULT_VILLAGER_TALK_2 = "DefaultVillagerTalk_2";
-  line 252786 [ConstString]: public const string DEFAULT_VILLAGER_TALK_3 = "DefaultVillagerTalk_3";
-  line 252801 [ConstString]: public const string INVOKE_EVENTS_ON_END_TALK = "InvokeEventsOnEndTalk";
-  line 253807 [DefaultVillagerTalk]: public class DefaultVillagerTalk : MonoBehaviour // TypeDefIndex: 3673
-
-[SPEAK] 81 match:
-  line 206625 [AssetBundleManager]: public static void Bark(string conversationTitle, Transform speaker, Transform listener, BarkHistory barkHistory) { }
-  line 206628 [AssetBundleManager]: public static void Bark(string conversationTitle, Transform speaker, Transform listener) { }
-  line 206631 [AssetBundleManager]: public static void Bark(string conversationTitle, Transform speaker) { }
-  line 206634 [AssetBundleManager]: public static void Bark(string conversationTitle, Transform speaker, BarkHistory barkHistory) { }
-  line 206637 [AssetBundleManager]: public static void BarkString(string barkText, Transform speaker, Transform listener, string sequence) { }
-
-[SAVED] Hasil lengkap: D:\1PROJECT TRANSLATION\tools\Il2CppDumper-win-v6.7.46\dump_cs_results.txt
-
-=== SELESAI ===
-Cek file hasil di folder Il2CppDumper:
-  - stringliteral_results.txt
-  - dump_cs_results.txt
+	// RVA: 0x87EBD0 Offset: 0x87DDD0 VA: 0x18087EBD0 Slot: 20
+	protected override void Dispose(bool disposing) { }
+}
