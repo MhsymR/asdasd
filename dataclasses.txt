@@ -1,0 +1,879 @@
+
+============================================================
+ CLASS: ResourceManager (53 lines)
+============================================================
+public class ResourceManager // TypeDefIndex: 1236
+{
+	// Fields
+	[Obsolete("call InternalGetResourceSet instead")]
+	protected Hashtable ResourceSets; // 0x10
+	private Dictionary<string, ResourceSet> _resourceSets; // 0x18
+	protected Assembly MainAssembly; // 0x20
+	private CultureInfo _neutralResourcesCulture; // 0x28
+	private ResourceManager.CultureNameResourceSetPair _lastUsedResourceCache; // 0x30
+	private bool UseManifest; // 0x38
+	[OptionalField(VersionAdded = 1)]
+	private bool UseSatelliteAssem; // 0x39
+	[OptionalField]
+	private UltimateResourceFallbackLocation _fallbackLoc; // 0x3C
+	[OptionalField(VersionAdded = 1)]
+	private Assembly _callingAssembly; // 0x40
+	[OptionalField(VersionAdded = 4)]
+	private RuntimeAssembly m_callingAssembly; // 0x48
+	private IResourceGroveler resourceGroveler; // 0x50
+	public static readonly int MagicNumber; // 0x0
+	public static readonly int HeaderVersionNumber; // 0x4
+	private static readonly Type _minResourceSet; // 0x8
+	internal static readonly string ResReaderTypeName; // 0x10
+	internal static readonly string ResSetTypeName; // 0x18
+	internal static readonly string MscorlibName; // 0x20
+	internal static readonly int DEBUG; // 0x28
+
+	// Methods
+
+	// RVA: 0x26F88D0 Offset: 0x26F7AD0 VA: 0x1826F88D0
+	private void Init() { }
+
+	// RVA: 0x26F8EC0 Offset: 0x26F80C0 VA: 0x1826F8EC0
+	protected void .ctor() { }
+
+	[OnDeserializing]
+	// RVA: 0x26F8BD0 Offset: 0x26F7DD0 VA: 0x1826F8BD0
+	private void OnDeserializing(StreamingContext ctx) { }
+
+	[OnDeserialized]
+	// RVA: 0x26F89A0 Offset: 0x26F7BA0 VA: 0x1826F89A0
+	private void OnDeserialized(StreamingContext ctx) { }
+
+	[OnSerializing]
+	// RVA: 0x26F8C20 Offset: 0x26F7E20 VA: 0x1826F8C20
+	private void OnSerializing(StreamingContext ctx) { }
+
+	// RVA: 0x26F8690 Offset: 0x26F7890 VA: 0x1826F8690
+	internal static bool CompareNames(string asmTypeName1, string typeName2, AssemblyName asmName2) { }
+
+	// RVA: 0x26F8CA0 Offset: 0x26F7EA0 VA: 0x1826F8CA0
+	private static void .cctor() { }
+}
+
+============================================================
+ CLASS: ES3File (185 lines)
+============================================================
+public class ES3File // TypeDefIndex: 1787
+{
+	// Fields
+	[EditorBrowsable(1)]
+	public static Dictionary<string, ES3File> cachedFiles; // 0x0
+	public ES3Settings settings; // 0x10
+	private Dictionary<string, ES3Data> cache; // 0x18
+	private bool syncWithFile; // 0x20
+	private DateTime timestamp; // 0x28
+
+	// Methods
+
+	// RVA: 0x440B10 Offset: 0x43FD10 VA: 0x180440B10
+	public void .ctor() { }
+
+	// RVA: 0x4407A0 Offset: 0x43F9A0 VA: 0x1804407A0
+	public void .ctor(string filePath) { }
+
+	// RVA: 0x440830 Offset: 0x43FA30 VA: 0x180440830
+	public void .ctor(string filePath, ES3Settings settings) { }
+
+	// RVA: 0x440A90 Offset: 0x43FC90 VA: 0x180440A90
+	public void .ctor(ES3Settings settings) { }
+
+	// RVA: 0x440AA0 Offset: 0x43FCA0 VA: 0x180440AA0
+	public void .ctor(bool syncWithFile) { }
+
+	// RVA: 0x4408E0 Offset: 0x43FAE0 VA: 0x1804408E0
+	public void .ctor(string filePath, bool syncWithFile) { }
+
+	// RVA: 0x440B70 Offset: 0x43FD70 VA: 0x180440B70
+	public void .ctor(string filePath, ES3Settings settings, bool syncWithFile) { }
+
+	// RVA: 0x440C30 Offset: 0x43FE30 VA: 0x180440C30
+	public void .ctor(ES3Settings settings, bool syncWithFile) { }
+
+	// RVA: 0x440970 Offset: 0x43FB70 VA: 0x180440970
+	public void .ctor(byte[] bytes, ES3Settings settings) { }
+
+	// RVA: 0x440700 Offset: 0x43F900 VA: 0x180440700
+	public void Sync() { }
+
+	// RVA: 0x440660 Offset: 0x43F860 VA: 0x180440660
+	public void Sync(string filePath, ES3Settings settings) { }
+
+	// RVA: 0x440310 Offset: 0x43F510 VA: 0x180440310
+	public void Sync(ES3Settings settings) { }
+
+	// RVA: 0x43E620 Offset: 0x43D820 VA: 0x18043E620
+	public void Clear() { }
+
+	// RVA: 0x43F190 Offset: 0x43E390 VA: 0x18043F190
+	public string[] GetKeys() { }
+
+	// RVA: -1 Offset: -1
+	public void Save<T>(string key, T value) { }
+	/* GenericInstMethod :
+	|
+	|-RVA: 0xBB0110 Offset: 0xBAF310 VA: 0x180BB0110
+	|-ES3File.Save<bool>
+	|
+	|-RVA: 0xBB0640 Offset: 0xBAF840 VA: 0x180BB0640
+	|-ES3File.Save<Int32Enum>
+	|
+	|-RVA: 0xBB0880 Offset: 0xBAFA80 VA: 0x180BB0880
+	|-ES3File.Save<object>
+	|
+	|-RVA: 0xBB0350 Offset: 0xBAF550 VA: 0x180BB0350
+	|-ES3File.Save<__Il2CppFullySharedGenericType>
+	*/
+
+	// RVA: 0x43FA20 Offset: 0x43EC20 VA: 0x18043FA20
+	public void SaveRaw(byte[] bytes, ES3Settings settings) { }
+
+	// RVA: 0x43E250 Offset: 0x43D450 VA: 0x18043E250
+	public void AppendRaw(byte[] bytes, ES3Settings settings) { }
+
+	// RVA: 0x43F8F0 Offset: 0x43EAF0 VA: 0x18043F8F0
+	public object Load(string key) { }
+
+	// RVA: 0x43F940 Offset: 0x43EB40 VA: 0x18043F940
+	public object Load(string key, object defaultValue) { }
+
+	// RVA: -1 Offset: -1
+	public T Load<T>(string key) { }
+	/* GenericInstMethod :
+	|
+	|-RVA: 0xBAFEE0 Offset: 0xBAF0E0 VA: 0x180BAFEE0
+	|-ES3File.Load<object>
+	|
+	|-RVA: 0xBAF5B0 Offset: 0xBAE7B0 VA: 0x180BAF5B0
+	|-ES3File.Load<__Il2CppFullySharedGenericType>
+	*/
+
+	// RVA: -1 Offset: -1
+	public T Load<T>(string key, T defaultValue) { }
+	/* GenericInstMethod :
+	|
+	|-RVA: 0xBAF310 Offset: 0xBAE510 VA: 0x180BAF310
+	|-ES3File.Load<bool>
+	|
+	|-RVA: 0xBAFA80 Offset: 0xBAEC80 VA: 0x180BAFA80
+	|-ES3File.Load<Int32Enum>
+	|
+	|-RVA: 0xBAFD10 Offset: 0xBAEF10 VA: 0x180BAFD10
+	|-ES3File.Load<object>
+	|
+	|-RVA: 0xBAF830 Offset: 0xBAEA30 VA: 0x180BAF830
+	|-ES3File.Load<__Il2CppFullySharedGenericType>
+	*/
+
+	// RVA: -1 Offset: -1
+	public void LoadInto<T>(string key, T obj) { }
+	/* GenericInstMethod :
+	|
+	|-RVA: 0xBAF080 Offset: 0xBAE280 VA: 0x180BAF080
+	|-ES3File.LoadInto<object>
+	*/
+
+	// RVA: 0x43F750 Offset: 0x43E950 VA: 0x18043F750
+	public byte[] LoadRawBytes() { }
+
+	// RVA: 0x43F840 Offset: 0x43EA40 VA: 0x18043F840
+	public string LoadRawString() { }
+
+	// RVA: 0x43EBC0 Offset: 0x43DDC0 VA: 0x18043EBC0
+	internal byte[] GetBytes(ES3Settings settings) { }
+
+	// RVA: 0x43EAE0 Offset: 0x43DCE0 VA: 0x18043EAE0
+	public void DeleteKey(string key) { }
+
+	// RVA: 0x43F6F0 Offset: 0x43E8F0 VA: 0x18043F6F0
+	public bool KeyExists(string key) { }
+
+	// RVA: 0x43FEE0 Offset: 0x43F0E0 VA: 0x18043FEE0
+	public int Size() { }
+
+	// RVA: 0x43F0B0 Offset: 0x43E2B0 VA: 0x18043F0B0
+	public Type GetKeyType(string key) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43F3B0 Offset: 0x43E5B0 VA: 0x18043F3B0
+	internal static ES3File GetOrCreateCachedFile(ES3Settings settings) { }
+
+	// RVA: 0x43E2D0 Offset: 0x43D4D0 VA: 0x18043E2D0
+	internal static void CacheFile(ES3Settings settings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x440020 Offset: 0x43F220 VA: 0x180440020
+	internal static void Store(ES3Settings settings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43F9A0 Offset: 0x43EBA0 VA: 0x18043F9A0
+	internal static void RemoveCachedFile(ES3Settings settings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43E670 Offset: 0x43D870 VA: 0x18043E670
+	internal static void CopyCachedFile(ES3Settings oldSettings, ES3Settings newSettings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43EA00 Offset: 0x43DC00 VA: 0x18043EA00
+	internal static void DeleteKey(string key, ES3Settings settings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43F600 Offset: 0x43E800 VA: 0x18043F600
+	internal static bool KeyExists(string key, ES3Settings settings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43EB40 Offset: 0x43DD40 VA: 0x18043EB40
+	internal static bool FileExists(ES3Settings settings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43F250 Offset: 0x43E450 VA: 0x18043F250
+	internal static string[] GetKeys(ES3Settings settings) { }
+
+	[EditorBrowsable(1)]
+	// RVA: 0x43F020 Offset: 0x43E220 VA: 0x18043F020
+	internal static string[] GetFiles() { }
+
+	// RVA: 0x43F500 Offset: 0x43E700 VA: 0x18043F500
+	internal static DateTime GetTimestamp(ES3Settings settings) { }
+
+	// RVA: 0x440710 Offset: 0x43F910 VA: 0x180440710
+	private static void .cctor() { }
+}
+
+============================================================
+ CLASS: FileLib (34 lines)
+============================================================
+public static class FileLib // TypeDefIndex: 2217
+{
+	// Methods
+
+	// RVA: 0x6C3F30 Offset: 0x6C3130 VA: 0x1806C3F30
+	public static void RegisterModule(LuaTable enviroment) { }
+
+	// RVA: 0x6C3D00 Offset: 0x6C2F00 VA: 0x1806C3D00
+	public static void RegisterFunctions(LuaTable module) { }
+
+	// RVA: 0x6C3BE0 Offset: 0x6C2DE0 VA: 0x1806C3BE0
+	public static LuaTable CreateMetaTable() { }
+
+	// RVA: 0x6C3FC0 Offset: 0x6C31C0 VA: 0x1806C3FC0
+	public static LuaValue close(LuaValue[] values) { }
+
+	// RVA: 0x6C4490 Offset: 0x6C3690 VA: 0x1806C4490
+	public static LuaValue read(LuaValue[] values) { }
+
+	// RVA: 0x6C41B0 Offset: 0x6C33B0 VA: 0x1806C41B0
+	public static LuaValue lines(LuaValue[] values) { }
+
+	// RVA: 0x6C49E0 Offset: 0x6C3BE0 VA: 0x1806C49E0
+	public static LuaValue seek(LuaValue[] values) { }
+
+	// RVA: 0x6C3C60 Offset: 0x6C2E60 VA: 0x1806C3C60
+	private static SeekOrigin GetSeekOrigin(string whence) { }
+
+	// RVA: 0x6C4D60 Offset: 0x6C3F60 VA: 0x1806C4D60
+	public static LuaValue write(LuaValue[] values) { }
+
+	// RVA: 0x6C40B0 Offset: 0x6C32B0 VA: 0x1806C40B0
+	public static LuaValue flush(LuaValue[] values) { }
+}
+
+============================================================
+ CLASS: ES3Stream (13 lines)
+============================================================
+public static class ES3Stream // TypeDefIndex: 3453
+{
+	// Methods
+
+	// RVA: 0x5F2900 Offset: 0x5F1B00 VA: 0x1805F2900
+	public static Stream CreateStream(ES3Settings settings, ES3FileMode fileMode) { }
+
+	// RVA: 0x5F2FD0 Offset: 0x5F21D0 VA: 0x1805F2FD0
+	public static Stream CreateStream(Stream stream, ES3Settings settings, ES3FileMode fileMode) { }
+
+	// RVA: 0x5F28E0 Offset: 0x5F1AE0 VA: 0x1805F28E0
+	public static void CopyTo(Stream source, Stream destination) { }
+}
+
+============================================================
+ CLASS: FileHelper (195 lines)
+============================================================
+public static class FileHelper // TypeDefIndex: 3478
+{
+	// Fields
+	private static string _applicationDataPath; // 0x0
+	private static string _applicationTempPath; // 0x8
+	private static string _applicationPersistentPath; // 0x10
+	private static char[] _invalidFilenameChars; // 0x18
+	private static char[] _invalidPathChars; // 0x20
+
+	// Properties
+	public static string StreamingAssetsPath { get; }
+	public static string ApplicationDataPath { get; }
+	public static string ApplicationTempPath { get; }
+	public static string ApplicationPersistentPath { get; }
+	public static string TempFile { get; }
+	public static string TempPath { get; }
+
+	// Methods
+
+	// RVA: 0x6032C0 Offset: 0x6024C0 VA: 0x1806032C0
+	public static string get_StreamingAssetsPath() { }
+
+	// RVA: 0x6031D0 Offset: 0x6023D0 VA: 0x1806031D0
+	public static string get_ApplicationDataPath() { }
+
+	// RVA: 0x603270 Offset: 0x602470 VA: 0x180603270
+	public static string get_ApplicationTempPath() { }
+
+	// RVA: 0x603220 Offset: 0x602420 VA: 0x180603220
+	public static string get_ApplicationPersistentPath() { }
+
+	// RVA: 0x603400 Offset: 0x602600 VA: 0x180603400
+	public static string get_TempFile() { }
+
+	// RVA: 0x603440 Offset: 0x602640 VA: 0x180603440
+	public static string get_TempPath() { }
+
+	[RuntimeInitializeOnLoadMethod]
+	// RVA: 0x603480 Offset: 0x602680 VA: 0x180603480
+	private static void initialize() { }
+
+	// RVA: 0x603BB0 Offset: 0x602DB0 VA: 0x180603BB0
+	public static bool isUnixPath(string path) { }
+
+	// RVA: 0x603C10 Offset: 0x602E10 VA: 0x180603C10
+	public static bool isWindowsPath(string path) { }
+
+	// RVA: 0x603B40 Offset: 0x602D40 VA: 0x180603B40
+	public static bool isUNCPath(string path) { }
+
+	// RVA: 0x603BA0 Offset: 0x602DA0 VA: 0x180603BA0
+	public static bool isURL(string path) { }
+
+	// RVA: 0x6026D0 Offset: 0x6018D0 VA: 0x1806026D0
+	public static string ValidatePath(string path, bool addEndDelimiter = True, bool preserveFile = True, bool removeInvalidChars = True) { }
+
+	// RVA: 0x602300 Offset: 0x601500 VA: 0x180602300
+	public static string ValidateFile(string path, bool removeInvalidChars = True) { }
+
+	// RVA: 0x600EC0 Offset: 0x6000C0 VA: 0x180600EC0
+	public static bool HasPathInvalidChars(string path, bool ignoreNullOrEmpty = True) { }
+
+	// RVA: 0x600DE0 Offset: 0x5FFFE0 VA: 0x180600DE0
+	public static bool HasFileInvalidChars(string file, bool ignoreNullOrEmpty = True) { }
+
+	// RVA: 0x6002B0 Offset: 0x5FF4B0 VA: 0x1806002B0
+	public static string[] GetFilesForName(string path, bool isRecursive = False, string[] filenames) { }
+
+	// RVA: 0x600790 Offset: 0x5FF990 VA: 0x180600790
+	public static string[] GetFiles(string path, bool isRecursive = False, string[] extensions) { }
+
+	// RVA: 0x5FF560 Offset: 0x5FE760 VA: 0x1805FF560
+	public static string[] GetDirectories(string path, bool isRecursive = False) { }
+
+	// RVA: 0x5FFC00 Offset: 0x5FEE00 VA: 0x1805FFC00
+	public static string[] GetDrives() { }
+
+	// RVA: 0x5FDA20 Offset: 0x5FCC20 VA: 0x1805FDA20
+	public static bool CopyDirectory(string sourceDir, string destDir, bool move = False, bool moveSafe = True) { }
+
+	// RVA: 0x5FDF00 Offset: 0x5FD100 VA: 0x1805FDF00
+	public static bool CopyFile(string sourceFile, string destFile, bool move = False, bool moveSafe = True) { }
+
+	// RVA: 0x600F60 Offset: 0x600160 VA: 0x180600F60
+	public static bool MoveDirectory(string sourceDir, string destDir) { }
+
+	// RVA: 0x600FD0 Offset: 0x6001D0 VA: 0x180600FD0
+	public static bool MoveFile(string sourceFile, string destFile) { }
+
+	// RVA: 0x601A70 Offset: 0x600C70 VA: 0x180601A70
+	public static string RenameDirectory(string path, string newName) { }
+
+	// RVA: 0x601CD0 Offset: 0x600ED0 VA: 0x180601CD0
+	public static string RenameFile(string path, string newName) { }
+
+	// RVA: 0x5FEDD0 Offset: 0x5FDFD0 VA: 0x1805FEDD0
+	public static bool DeleteFile(string file) { }
+
+	// RVA: 0x5FEBE0 Offset: 0x5FDDE0 VA: 0x1805FEBE0
+	public static bool DeleteDirectory(string dir) { }
+
+	// RVA: 0x5FF0B0 Offset: 0x5FE2B0 VA: 0x1805FF0B0
+	public static bool ExistsFile(string file) { }
+
+	// RVA: 0x5FEFC0 Offset: 0x5FE1C0 VA: 0x1805FEFC0
+	public static bool ExistsDirectory(string path) { }
+
+	// RVA: 0x5FE380 Offset: 0x5FD580 VA: 0x1805FE380
+	public static string CreateDirectory(string path, string folderName) { }
+
+	// RVA: 0x5FE5C0 Offset: 0x5FD7C0 VA: 0x1805FE5C0
+	public static bool CreateDirectory(string path) { }
+
+	// RVA: 0x5FE740 Offset: 0x5FD940 VA: 0x1805FE740
+	public static string CreateFile(string path, string fileName) { }
+
+	// RVA: 0x5FEA00 Offset: 0x5FDC00 VA: 0x1805FEA00
+	public static bool CreateFile(string path) { }
+
+	// RVA: 0x603870 Offset: 0x602A70 VA: 0x180603870
+	public static bool isDirectory(string path, bool checkForExtensions = True) { }
+
+	// RVA: 0x603A10 Offset: 0x602C10 VA: 0x180603A10
+	public static bool isFile(string path, bool checkForExtensions = True) { }
+
+	// RVA: 0x603A90 Offset: 0x602C90 VA: 0x180603A90
+	public static bool isRoot(string path) { }
+
+	// RVA: 0x5FFFE0 Offset: 0x5FF1E0 VA: 0x1805FFFE0
+	public static string GetFileName(string path, bool removeInvalidChars = True) { }
+
+	// RVA: 0x5FF1F0 Offset: 0x5FE3F0 VA: 0x1805FF1F0
+	public static string GetCurrentDirectoryName(string path) { }
+
+	// RVA: 0x5FF760 Offset: 0x5FE960 VA: 0x1805FF760
+	public static string GetDirectoryName(string path) { }
+
+	// RVA: 0x600970 Offset: 0x5FFB70 VA: 0x180600970
+	public static long GetFilesize(string path) { }
+
+	// RVA: 0x5FFD60 Offset: 0x5FEF60 VA: 0x1805FFD60
+	public static string GetExtension(string path) { }
+
+	// RVA: 0x600B90 Offset: 0x5FFD90 VA: 0x180600B90
+	public static DateTime GetLastModifiedDate(string path) { }
+
+	// RVA: 0x601870 Offset: 0x600A70 VA: 0x180601870
+	public static string ReadAllText(string sourceFile, Encoding encoding) { }
+
+	// RVA: 0x601670 Offset: 0x600870 VA: 0x180601670
+	public static string[] ReadAllLines(string sourceFile, Encoding encoding) { }
+
+	// RVA: 0x601490 Offset: 0x600690 VA: 0x180601490
+	public static byte[] ReadAllBytes(string sourceFile) { }
+
+	// RVA: 0x602D50 Offset: 0x601F50 VA: 0x180602D50
+	public static bool WriteAllText(string destFile, string text, Encoding encoding) { }
+
+	// RVA: 0x602B90 Offset: 0x601D90 VA: 0x180602B90
+	public static bool WriteAllLines(string destFile, string[] lines, Encoding encoding) { }
+
+	// RVA: 0x6029F0 Offset: 0x601BF0 VA: 0x1806029F0
+	public static bool WriteAllBytes(string destFile, byte[] data) { }
+
+	// RVA: 0x6022B0 Offset: 0x6014B0 VA: 0x1806022B0
+	public static bool ShowPath(string path) { }
+
+	// RVA: 0x601EC0 Offset: 0x6010C0 VA: 0x180601EC0
+	public static bool ShowFile(string file) { }
+
+	// RVA: 0x6010E0 Offset: 0x6002E0 VA: 0x1806010E0
+	public static bool OpenFile(string file) { }
+
+	[Obsolete("Please use 'HasPathInvalidChars' instead.")]
+	// RVA: 0x6013D0 Offset: 0x6005D0 VA: 0x1806013D0
+	public static bool PathHasInvalidChars(string path) { }
+
+	[Obsolete("Please use 'HasFileInvalidChars' instead.")]
+	// RVA: 0x5FF1A0 Offset: 0x5FE3A0 VA: 0x1805FF1A0
+	public static bool FileHasInvalidChars(string file) { }
+
+	[Obsolete("Please use 'CopyDirectory' instead.")]
+	// RVA: 0x5FE300 Offset: 0x5FD500 VA: 0x1805FE300
+	public static bool CopyPath(string sourceDir, string destDir, bool move = False) { }
+
+	[Obsolete("Please use 'MoveDirectory' instead.")]
+	// RVA: 0x601040 Offset: 0x600240 VA: 0x180601040
+	public static bool MovePath(string sourceDir, string destDir) { }
+
+	// RVA: 0x602FC0 Offset: 0x6021C0 VA: 0x180602FC0
+	private static void copyAll(DirectoryInfo source, DirectoryInfo target) { }
+
+	// RVA: 0x602F10 Offset: 0x602110 VA: 0x180602F10
+	private static void .cctor() { }
+}
+
+============================================================
+ CLASS: BaseConfig (97 lines)
+============================================================
+public class BaseConfig : MonoBehaviour // TypeDefIndex: 3637
+{
+	// Fields
+	public static bool AutoSave; // 0x0
+	public static float Shirt_1; // 0x4
+	public static float Skirt_1; // 0x8
+	public static float Bra_1; // 0xC
+	public static float Panty_1; // 0x10
+	public static float Garter_1; // 0x14
+	public static float Socks_1; // 0x18
+	public static float Shoes_1; // 0x1C
+	public static float Pendant_1; // 0x20
+	public static float WristBand_1; // 0x24
+	public static float Shirt_2; // 0x28
+	public static float Skirt_2; // 0x2C
+	public static float Bra_2; // 0x30
+	public static float Panty_2; // 0x34
+	public static float Garter_2; // 0x38
+	public static float Socks_2; // 0x3C
+	public static float Shoes_2; // 0x40
+	public static float Pendant_2; // 0x44
+	public static float WristBand_2; // 0x48
+	public static float CostumeInit; // 0x4C
+	public static float Bgm; // 0x50
+	public static float Se; // 0x54
+	public static float Ss; // 0x58
+	public static float Ve; // 0x5C
+	public static float MouseSensitivity; // 0x60
+	public static float MouseSensitivityOnAim; // 0x64
+	public static int WindowMode; // 0x68
+	public static int Resolution; // 0x6C
+	public static float CameraDrawDistance; // 0x70
+	public static int ShowShadow; // 0x74
+	public static float BgmInit; // 0x78
+	public static float SeInit; // 0x7C
+	public static float SsInit; // 0x80
+	public static float VeInit; // 0x84
+	public static float MouseSensitivityInit; // 0x88
+	public static float MouseSensitivityOnAimInit; // 0x8C
+	public static int WindowModeInit; // 0x90
+	public static int ResolutionInit; // 0x94
+	public static float CameraDrawDistanceInit; // 0x98
+	public static int ShowShadowInit; // 0x9C
+	public static int MoveCameraOnUseSkill; // 0xA0
+	public static int AttentionOnLock; // 0xA4
+	public static int AttentionPosition; // 0xA8
+	public static int ShowSlider; // 0xAC
+	public static int CameraEffect; // 0xB0
+	public static int TextEffect; // 0xB4
+	public static int PinkDamageEffect; // 0xB8
+	public static int LipSync; // 0xBC
+	public static int SupportAim; // 0xC0
+	public static int ShowEffect; // 0xC4
+	public static int ArmorBreak; // 0xC8
+	public static int GrabCounter; // 0xCC
+	public static int DamageNumber; // 0xD0
+	public static int ChangeBgmOnUseSkill; // 0xD4
+	public static int AutoGetItem; // 0xD8
+	public static int ShowHelpKeyBind; // 0xDC
+	public static int PewAudienceSound; // 0xE0
+	public static int PewHitStop; // 0xE4
+	public static int MoveCameraOnUseSkillInit; // 0xE8
+	public static int AttentionOnLockInit; // 0xEC
+	public static int AttentionPositionInit; // 0xF0
+	public static int ShowSliderInit; // 0xF4
+	public static int CameraEffectInit; // 0xF8
+	public static int PinkDamageEffectInit; // 0xFC
+	public static int LipSyncInit; // 0x100
+	public static int SupportAimInit; // 0x104
+	public static int ShowEffectInit; // 0x108
+	public static int TextEffectInit; // 0x10C
+	public static int ArmorBreakInit; // 0x110
+	public static int GrabCounterInit; // 0x114
+	public static int DamageNumberInit; // 0x118
+	public static int ChangeBgmOnUseSkillInit; // 0x11C
+	public static int AutoGetItemInit; // 0x120
+	public static int ShowHelpKeyBindInit; // 0x124
+	public static int PewAudienceSoundInit; // 0x128
+	public static int PewHitStopInit; // 0x12C
+
+	// Methods
+
+	// RVA: 0x818C60 Offset: 0x817E60 VA: 0x180818C60
+	public static void Save() { }
+
+	// RVA: 0x818040 Offset: 0x817240 VA: 0x180818040
+	public static void Load() { }
+
+	// RVA: 0x817BE0 Offset: 0x816DE0 VA: 0x180817BE0
+	public static void Init() { }
+
+	// RVA: 0x435220 Offset: 0x434420 VA: 0x180435220
+	public void .ctor() { }
+
+	// RVA: 0x8194F0 Offset: 0x8186F0 VA: 0x1808194F0
+	private static void .cctor() { }
+}
+
+============================================================
+ CLASS: BgmController (68 lines)
+============================================================
+public class BgmController : MonoBehaviour // TypeDefIndex: 3641
+{
+	// Fields
+	[SerializeField]
+	[Header("--- データの登録 ---")]
+	private AudioSource audioSource; // 0x20
+	[SerializeField]
+	private AudioSource audioSourceTmp; // 0x28
+	[SerializeField]
+	private string[] bundleNames; // 0x30
+	[Header("--- 個々の設定 ---")]
+	[SerializeField]
+	private string defaultSoundName; // 0x38
+	[SerializeField]
+	private float fadeSpeed; // 0x40
+	[SerializeField]
+	private float masterBias; // 0x44
+	[SerializeField]
+	[Header("--- ReadOnly ---")]
+	[ReadOnly]
+	public string currentPlaySoundName; // 0x48
+	[ReadOnly]
+	[SerializeField]
+	private string prePlaySoundName; // 0x50
+	[SerializeField]
+	[ReadOnly]
+	private float currentVolumeBias; // 0x58
+	[SerializeField]
+	[ReadOnly]
+	private float targetVolumeBias; // 0x5C
+	[SerializeField]
+	[ReadOnly]
+	private float currentTmpVolumeBias; // 0x60
+	[SerializeField]
+	[ReadOnly]
+	private float targetTmpVolumeBias; // 0x64
+	[SerializeField]
+	[ReadOnly]
+	private bool tmp; // 0x68
+	private Dictionary<string, AudioClip> sounds; // 0x70
+
+	// Methods
+
+	// RVA: 0x81AD60 Offset: 0x819F60 VA: 0x18081AD60
+	private void Start() { }
+
+	[IteratorStateMachine(typeof(BgmController.<StartPlay>d__15))]
+	// RVA: 0x81ACF0 Offset: 0x819EF0 VA: 0x18081ACF0
+	private IEnumerator StartPlay() { }
+
+	// RVA: 0x81AEE0 Offset: 0x81A0E0 VA: 0x18081AEE0
+	private void Update() { }
+
+	// RVA: 0x81AB70 Offset: 0x819D70 VA: 0x18081AB70
+	public void Play(string name) { }
+
+	// RVA: 0x81AB00 Offset: 0x819D00 VA: 0x18081AB00
+	public void PlayDefaultSound() { }
+
+	// RVA: 0x81AED0 Offset: 0x81A0D0 VA: 0x18081AED0
+	public void Stop() { }
+
+	// RVA: 0x81AB10 Offset: 0x819D10 VA: 0x18081AB10
+	public void PlayPreSound() { }
+
+	// RVA: 0x81B1F0 Offset: 0x81A3F0 VA: 0x18081B1F0
+	public void .ctor() { }
+}
+
+============================================================
+ CLASS: ItemData (36 lines)
+============================================================
+public class ItemData : ScriptableObject // TypeDefIndex: 3758
+{
+	// Fields
+	public string name; // 0x18
+	public ItemDatabase.Rank rank; // 0x20
+	public ItemDatabase.Type type; // 0x24
+	public string id; // 0x28
+	[TextArea(1, 5)]
+	public string tip; // 0x30
+	public int stack; // 0x38
+	public Sprite sprite; // 0x40
+	public string spriteBundleName; // 0x48
+	public int basePrice; // 0x50
+	public bool canAim; // 0x54
+	public GameObject handItemPrefab; // 0x58
+	public string handItemBundleName; // 0x60
+	public Vector3 cameraPositionWhenAim; // 0x68
+	public ItemDatabase.AimType aimType; // 0x74
+	public float coolTime; // 0x78
+	public UnityEvent useEvent; // 0x80
+	public AudioClip useAudioClip; // 0x88
+	public float useAudioClipVolume; // 0x90
+	public float range; // 0x94
+	public ItemDatabase.Recipe[] recipes; // 0x98
+	public string[] accBuffs; // 0xA0
+	public string changeItemId; // 0xA8
+	public string[] updateAchievementsOnCraftId; // 0xB0
+	public bool canUseOnTutorial; // 0xB8
+	public bool lostProperty; // 0xB9
+	public bool displayItemBook; // 0xBA
+
+	// Methods
+
+	// RVA: 0x84C1C0 Offset: 0x84B3C0 VA: 0x18084C1C0
+	public void .ctor() { }
+}
+
+============================================================
+ CLASS: Town (78 lines)
+============================================================
+public class Town : MonoBehaviour // TypeDefIndex: 3919
+{
+	// Fields
+	[SerializeField]
+	[Header("--- 基本設定 ---")]
+	public string id; // 0x20
+	[SerializeField]
+	public string subName; // 0x28
+	[SerializeField]
+	public string name; // 0x30
+	[SerializeField]
+	public Town preTown; // 0x38
+	[SerializeField]
+	public Town nextTown; // 0x40
+	[SerializeField]
+	public bool canRaidEvent; // 0x48
+	[SerializeField]
+	public string soundName; // 0x50
+	[SerializeField]
+	public Transform respawnPoint; // 0x58
+	[SerializeField]
+	[Header("--- 滞在中に消すオブジェクトの設定 ---")]
+	public GameObject[] hideObjects; // 0x60
+	[SerializeField]
+	[Header("--- 汽車設定 ---")]
+	public Town.TrainStartPosition trainPositivePosition; // 0x68
+	[SerializeField]
+	public Town.TrainStartPosition trainNegativePosition; // 0x70
+	[Header("--- エリア設定 ---")]
+	[SerializeField]
+	public Transform centerPoint; // 0x78
+	[SerializeField]
+	public Transform townAreaParent; // 0x80
+	[Header("--- NPC設定 ---")]
+	[SerializeField]
+	public Transform npcSpawnerParent; // 0x88
+	[ReadOnly]
+	[Tooltip("Parentから自動登録．手動での登録不要")]
+	[SerializeField]
+	private List<NPCSpawner> npcSpawners; // 0x90
+	[Header("--- ReadOnly ---")]
+	[SerializeField]
+	[ReadOnly]
+	public int townIndex; // 0x98
+	[SerializeField]
+	[ReadOnly]
+	public TownManager townManager; // 0xA0
+	[ReadOnly]
+	[SerializeField]
+	public bool visited; // 0xA8
+	[ReadOnly]
+	[SerializeField]
+	public StageEvent currentStageEvent; // 0xB0
+	private MapDisplayObject mapIcon; // 0xB8
+
+	// Methods
+
+	// RVA: 0x891110 Offset: 0x890310 VA: 0x180891110
+	private void Start() { }
+
+	// RVA: 0x8917D0 Offset: 0x8909D0 VA: 0x1808917D0
+	public void Visited() { }
+
+	// RVA: 0x890EE0 Offset: 0x8900E0 VA: 0x180890EE0
+	private void DespawnNpc() { }
+
+	// RVA: 0x890DC0 Offset: 0x88FFC0 VA: 0x180890DC0
+	private void ActivateNpcSpawner() { }
+
+	// RVA: 0x8910D0 Offset: 0x8902D0 VA: 0x1808910D0
+	public void StartRaidEvent(StageEvent stageEvent) { }
+
+	// RVA: 0x891020 Offset: 0x890220 VA: 0x180891020
+	public void EndRaidEvent() { }
+
+	// RVA: 0x891890 Offset: 0x890A90 VA: 0x180891890
+	public void .ctor() { }
+}
+
+============================================================
+ CLASS: TownManager (80 lines)
+============================================================
+public class TownManager : MonoBehaviour // TypeDefIndex: 3921
+{
+	// Fields
+	[SerializeField]
+	private Town[] towns; // 0x20
+	[SerializeField]
+	public GameObject townTextObject; // 0x28
+	[SerializeField]
+	public BgmController bgmController; // 0x30
+	[ReadOnly]
+	[SerializeField]
+	public Town inPlayerTown; // 0x38
+	[ReadOnly]
+	[SerializeField]
+	public TownArea inPlayerArea; // 0x40
+	[SerializeField]
+	[ReadOnly]
+	private PlayerScriptManager psm; // 0x48
+	[SerializeField]
+	[ReadOnly]
+	private UI_Town ui; // 0x50
+	[SerializeField]
+	[ReadOnly]
+	public float exitTime; // 0x58
+	[SerializeField]
+	[ReadOnly]
+	private string lastTownId; // 0x60
+	private List<Town> showedTown; // 0x68
+	private bool changedBgm; // 0x70
+
+	// Methods
+
+	// RVA: 0x88FC80 Offset: 0x88EE80 VA: 0x18088FC80
+	private void Awake() { }
+
+	// RVA: 0x88FDD0 Offset: 0x88EFD0 VA: 0x18088FDD0
+	private void FindPlayer() { }
+
+	// RVA: 0x8909F0 Offset: 0x88FBF0 VA: 0x1808909F0
+	private void Start() { }
+
+	// RVA: 0x890BF0 Offset: 0x88FDF0 VA: 0x180890BF0
+	private void Update() { }
+
+	// RVA: 0x8902C0 Offset: 0x88F4C0 VA: 0x1808902C0
+	public Town GetTown(int index) { }
+
+	// RVA: 0x8902F0 Offset: 0x88F4F0 VA: 0x1808902F0
+	public Town GetTown(string id) { }
+
+	// RVA: 0x478780 Offset: 0x477980 VA: 0x180478780
+	public void SetUi(UI_Town u) { }
+
+	// RVA: 0x890370 Offset: 0x88F570 VA: 0x180890370
+	public void SetTown(Town town) { }
+
+	// RVA: 0x890A90 Offset: 0x88FC90 VA: 0x180890A90
+	private void UpdateHideObject(Town preTown, Town town) { }
+
+	// RVA: 0x88FCE0 Offset: 0x88EEE0 VA: 0x18088FCE0
+	public void ChangeSound(Town town) { }
+
+	// RVA: 0x890770 Offset: 0x88F970 VA: 0x180890770
+	private void ShowUi(Town t) { }
+
+	// RVA: 0x890890 Offset: 0x88FA90 VA: 0x180890890
+	private bool ShowedUi(Town t) { }
+
+	// RVA: 0x890180 Offset: 0x88F380 VA: 0x180890180
+	public Town GetNearRaidEventTown() { }
+
+	// RVA: 0x88FEA0 Offset: 0x88F0A0 VA: 0x18088FEA0
+	public float GetDistanceFromPlayer(Town town) { }
+
+	// RVA: 0x890100 Offset: 0x88F300 VA: 0x180890100
+	public Town GetLastTown() { }
+
+	// RVA: 0x890D40 Offset: 0x88FF40 VA: 0x180890D40
+	public void .ctor() { }
+}
